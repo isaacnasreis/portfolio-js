@@ -551,9 +551,9 @@ body .principal .outlined {
 }
 
 .projetos .projetos__container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
   padding: 2rem 0 1.25rem 0;
   max-width: 1440px;
   margin: 0 auto;
@@ -561,10 +561,13 @@ body .principal .outlined {
 
 .projetos__container .projeto {
   display: flex;
-  padding: 2.5rem 0;
-  align-items: center;
-  gap: 3.75rem;
-  align-self: stretch;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid #3a3f45;
+  border-radius: 1rem;
+  background: #2a2f34;
 }
 
 .projeto .projeto__imagemContainer {
@@ -573,12 +576,12 @@ body .principal .outlined {
   box-shadow: 0px 12px 42px -4px rgba(24, 39, 75, 0.12),
     0px 8px 18px -6px rgba(24, 39, 75, 0.12);
 
-  width: 530px;
-  height: 397.735px;
+  width: 100%;
+  height: 260px;
   flex-shrink: 0;
   cursor: crosshair;
 
-  transition: all 1s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
 .projeto .projeto__imagemContainer.projeto-encoderDecoder {
@@ -649,7 +652,7 @@ body .principal .outlined {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.75rem;
+  gap: 0.9rem;
 }
 
 .projeto__textoContainer .projeto__numero {
@@ -662,10 +665,10 @@ body .principal .outlined {
 }
 
 .projeto__textoContainer .projeto__titulo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 2.5rem;
+  line-height: 1.9rem;
   letter-spacing: -0.64px;
   color: var(--text-muted-light);
 }
@@ -677,13 +680,18 @@ body .principal .outlined {
   font-weight: 400;
   line-height: 1.5rem;
   letter-spacing: 0.32px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .projeto .projeto__linksContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .projeto__linksContainer .projeto__link {
@@ -702,6 +710,26 @@ body .principal .outlined {
 
 .projeto__linksContainer .projeto__link svg path {
   stroke: var(--text-light);
+}
+
+.projetos .projetos__toggle {
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  border: 2px solid var(--border-light);
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0.85rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.projetos .projetos__toggle:hover {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
 }
 
 #contato {
@@ -1098,13 +1126,13 @@ body .principal .outlined {
     padding: 0;
   }
 
-  .projetos__container .projeto {
-    gap: 1rem;
+  .projetos .projetos__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .projeto .projeto__imagemContainer {
-    width: 40.5vw;
-    height: 30.5vw;
+    width: 100%;
+    height: 220px;
   }
 
   #contato {
@@ -1332,16 +1360,12 @@ body .principal .outlined {
   .projetos .projetos__container {
     padding: 1.25rem 0;
     gap: 1.75rem;
+    grid-template-columns: 1fr;
   }
 
   .projetos__container .projeto {
-    flex-direction: column;
-    padding: 0;
-    gap: 1.75rem;
-  }
-
-  .projetos__container .projeto:nth-child(2n) {
-    flex-direction: column-reverse;
+    padding: 0.9rem;
+    gap: 1rem;
   }
 
   .projeto__textoContainer .projeto__numero {
@@ -1357,8 +1381,8 @@ body .principal .outlined {
   }
 
   .projeto .projeto__imagemContainer {
-    width: 80vw;
-    height: 40vh;
+    width: 100%;
+    height: 240px;
   }
 
   #contato {
@@ -1420,8 +1444,8 @@ body .principal .outlined {
   }
 
   .projeto .projeto__imagemContainer {
-    width: 90vw;
-    height: 40vh;
+    width: 100%;
+    height: 210px;
   }
 
   .form__container form .form__submitButton-container {
@@ -1437,7 +1461,7 @@ body .principal .outlined {
   }
 
   .projeto .projeto__imagemContainer {
-    height: 30vh;
+    height: 180px;
   }
 
   .skills__cards .skills__card {
@@ -1478,6 +1502,6 @@ body .principal .outlined {
   }
 
   .projeto .projeto__imagemContainer {
-    height: 20vh;
+    height: 150px;
   }
 }

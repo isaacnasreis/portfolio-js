@@ -319,12 +319,48 @@ function createProjectElement(project) {
     </div>
   `;
 
-  const isEven = project.id && parseInt(project.id, 10) % 2 === 0;
-  projectArticle.innerHTML = isEven
-    ? textContainer + imageContainer
-    : imageContainer + textContainer;
+  projectArticle.innerHTML = imageContainer + textContainer;
 
   return projectArticle;
+}
+
+function setupProjectsToggle(projects) {
+  const container = document.querySelector(".projetos__container");
+  const toggleButton = document.querySelector(".projetos__toggle");
+  if (!container || !toggleButton || !Array.isArray(projects)) return;
+
+  const initialVisibleProjects = 4;
+  let isExpanded = false;
+
+  const renderProjects = () => {
+    const projectsToRender = isExpanded
+      ? projects
+      : projects.slice(0, initialVisibleProjects);
+
+    container.innerHTML = "";
+    const fragment = document.createDocumentFragment();
+    projectsToRender.forEach((project) => {
+      fragment.appendChild(createProjectElement(project));
+    });
+    container.appendChild(fragment);
+
+    toggleButton.textContent = isExpanded
+      ? "Ver menos projetos"
+      : "Ver mais projetos";
+    toggleButton.setAttribute("aria-expanded", String(isExpanded));
+  };
+
+  if (projects.length <= initialVisibleProjects) {
+    toggleButton.hidden = true;
+  }
+
+  toggleButton.addEventListener("click", () => {
+    isExpanded = !isExpanded;
+    renderProjects();
+    setupScrollAnimation();
+  });
+
+  renderProjects();
 }
 
 function renderContent({ containerSelector, data, renderItem, errorMsg }) {
@@ -364,12 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
     errorMsg: "Container de formações ou dados das formações não encontrados.",
   });
 
-  renderContent({
-    containerSelector: ".projetos__container",
-    data: projectsData,
-    renderItem: createProjectElement,
-    errorMsg: "Container de projetos ou dados dos projetos não encontrados.",
-  });
+  setupProjectsToggle(projectsData);
 
   setupScrollAnimation();
 

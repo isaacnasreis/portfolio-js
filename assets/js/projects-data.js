@@ -6,7 +6,7 @@ const projectsData = [
       "Solução full-stack para gerenciamento de tarefas com autenticação JWT. O projeto demonstra a criação de um back-end robusto com Node.js e um front-end reativo e otimizado para SEO com Nuxt.js, focando em uma experiência de usuário intuitiva, responsiva e acessível.",
     imageClass: "projeto-doIt",
     demoUrl: "https://doit-jade.vercel.app/",
-    repoUrl: "https://github.com/isaacnreis/doIt",
+    repoUrl: "https://github.com/isaacnasreis/doIt",
   },
   {
     id: "02",
@@ -15,7 +15,7 @@ const projectsData = [
       "Dashboard administrativo interativo para gerenciamento de dados complexos. A plataforma oferece visualização de métricas com gráficos dinâmicos, gestão de usuários e produtos, e temas personalizáveis (Dark/Light). O projeto destaca competências em Vue 3, TypeScript e bibliotecas de visualização de dados.",
     imageClass: "projeto-vortexAdmin",
     demoUrl: "https://vortexadmin.netlify.app/",
-    repoUrl: "https://github.com/isaacnreis/vortexadmin",
+    repoUrl: "https://github.com/isaacnasreis/vortexadmin",
   },
   {
     id: "03",
@@ -24,7 +24,7 @@ const projectsData = [
       "Simulação de e-commerce funcional com integração de pagamentos via Stripe. O projeto demonstra a construção de uma experiência de compra completa, com gerenciamento de estado eficiente e uma interface responsiva. Evidencia a aplicação de boas práticas para criar uma loja virtual escalável com React.",
     imageClass: "projeto-reactStore",
     demoUrl: "https://react-store-lyart.vercel.app/",
-    repoUrl: "https://github.com/isaacnreis/react-store",
+    repoUrl: "https://github.com/isaacnasreis/react-store",
   },
   {
     id: "04",
@@ -33,7 +33,7 @@ const projectsData = [
       "Catálogo interativo de filmes que consome a API do TMDB em tempo real. A aplicação permite pesquisa, visualização de detalhes e criação de uma lista de favoritos com persistência local. Demonstra forte habilidade em React, gerenciamento de estado e integração com APIs externas.",
     imageClass: "projeto-cineScope",
     demoUrl: "https://cine-scope-mu.vercel.app/",
-    repoUrl: "https://github.com/isaacnreis/cineScope",
+    repoUrl: "https://github.com/isaacnasreis/cineScope",
   },
   {
     id: "05",
@@ -42,7 +42,7 @@ const projectsData = [
       "Ferramenta para codificar e decodificar textos em tempo real, construída com JavaScript puro. O projeto demonstra a aplicação de lógica de programação e manipulação direta do DOM para resolver um problema algorítmico e criar uma funcionalidade interativa com tecnologias web fundamentais.",
     imageClass: "projeto-encoderDecoder",
     demoUrl: "https://isaacnreis.github.io/alura-challenge-one/",
-    repoUrl: "https://github.com/isaacnreis/alura-challenge-one",
+    repoUrl: "https://github.com/isaacnasreis/alura-challenge-one",
   },
   {
     id: "06",
@@ -51,7 +51,7 @@ const projectsData = [
       "Aplicação para controle de despesas com validação de formulários e persistência de dados via Local Storage. O sistema oferece uma experiência guiada para o usuário cadastrar e consultar despesas, com feedback visual claro. Demonstra a criação de uma ferramenta funcional para gerenciamento de dados no lado do cliente.",
     imageClass: "projeto-orcamentoPessoal",
     demoUrl: "https://isaacnreis.github.io/orcamento-pessoal/",
-    repoUrl: "https://github.com/isaacnreis/orcamento-pessoal",
+    repoUrl: "https://github.com/isaacnasreis/orcamento-pessoal",
   },
   {
     id: "07",
@@ -60,7 +60,7 @@ const projectsData = [
       "Pokedex interativa que consome a PokeAPI para exibir dados de Pokémon de forma dinâmica. O projeto destaca a habilidade de realizar requisições assíncronas, processar os dados e renderizar componentes de forma eficiente, resultando em uma experiência de usuário fluida e responsiva.",
     imageClass: "projeto-pokedex",
     demoUrl: "https://js-developer-pokedex-isaacnreis.vercel.app/",
-    repoUrl: "https://github.com/isaacnreis/js-developer-pokedex",
+    repoUrl: "https://github.com/isaacnasreis/js-developer-pokedex",
   },
   {
     id: "08",
@@ -69,7 +69,7 @@ const projectsData = [
       "Implementação do clássico Jogo da Velha com JavaScript puro. O projeto demonstra a aplicação de lógica de programação para gerenciar o estado do jogo, validar jogadas e determinar o vencedor, evidenciando a capacidade de criar interatividade e regras de negócio no front-end.",
     imageClass: "projeto-jogoDaVelha",
     demoUrl: "https://isaacnreis.github.io/jogodavelha/",
-    repoUrl: "https://github.com/isaacnreis/jogodavelha",
+    repoUrl: "https://github.com/isaacnasreis/jogodavelha",
   },
   {
     id: null,
@@ -78,10 +78,10 @@ const projectsData = [
       "Meu perfil no GitHub é um reflexo contínuo da minha jornada como desenvolvedor. Lá você encontrará uma variedade de outros projetos, experimentos e contribuições que demonstram minha paixão por aprender e construir. Explore para ver mais de perto meu código e minhas áreas de interesse.",
     imageClass: "projeto-git",
     customLinks: [
-      { text: "Link Para GitHub", url: "https://github.com/isaacnreis" },
+      { text: "Link Para GitHub", url: "https://github.com/isaacnasreis" },
       {
         text: "Repositório Deste Portfólio",
-        url: "https://github.com/isaacnreis/portfolio-novo",
+        url: "https://github.com/isaacnasreis/portfolio-novo",
       },
     ],
   },
