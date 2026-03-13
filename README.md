@@ -38,4 +38,4 @@ Você pode me encontrar nas seguintes plataformas:
 
 - 💼 **LinkedIn:** https://www.linkedin.com/in/isaacnreis/
 - 📧 **Email:** isaacreisn@gmail.com
-- 🌐 **Website:** https://isaacnreis.github.io/portfolio-n/
+- 🌐 **Website:** https://isaacnasreis.github.io/portfolio-js/
