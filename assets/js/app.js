@@ -239,12 +239,23 @@ function createSkillElement(skill) {
   if (skill.customCardStyle) {
     skillCard.style.cssText = skill.customCardStyle;
   }
+
+  const normalizedSvg = skill.svg
+    .replace(/fill="#212529"/gi, 'fill="currentColor"')
+    .replace(/stroke="#212529"/gi, 'stroke="currentColor"');
+
   skillCard.innerHTML = `
-    ${skill.svg}
+    ${normalizedSvg}
     <h3 class="skills__cardTitulo" style="${skill.customTitleStyle || ""}">${
     skill.title
   }</h3>
   `;
+
+  const icon = skillCard.querySelector("svg");
+  if (icon) {
+    icon.classList.add("skills__icon");
+  }
+
   return skillCard;
 }
 

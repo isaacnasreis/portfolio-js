@@ -211,9 +211,10 @@ body .principal .outlined {
 .banner__textos .banner__redes {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  width: 20rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: min(100%, 34rem);
 
   position: relative;
   left: 0;
@@ -224,6 +225,7 @@ body .principal .outlined {
   border-radius: 0.25rem;
   border: 2px solid var(--border-dark);
   background: var(--bg-light);
+  color: var(--text-dark);
   display: flex;
   padding: 1rem;
   justify-content: center;
@@ -236,24 +238,18 @@ body .principal .outlined {
   height: 1.25rem;
 }
 
-.banner__redes .banner__redes-link:has(> .banner__redes-facebook) {
-  background: var(--bg-dark);
-  border-color: var(--border-light);
-}
-
 .banner__redes .banner__redes-link:hover {
   background: var(--bg-dark);
   border-color: var(--border-light);
+  color: var(--text-light);
   scale: 1.1;
 }
 
-.banner__redes .banner__redes-link:hover svg path {
-  fill: var(--text-light);
-}
-
-.banner__redes .banner__redes-link:has(> .banner__redes-facebook):hover {
-  background: var(--bg-light);
-  border-color: var(--border-dark);
+.banner__redes .banner__redes-link svg,
+.banner__redes .banner__redes-link svg * {
+  color: inherit;
+  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out,
+    stroke 0.3s ease-in-out;
 }
 
 .skills {
@@ -279,6 +275,7 @@ body .principal .outlined {
   border-radius: 0.25rem;
   border: 2px solid var(--border-dark);
   background: var(--bg-light);
+  color: var(--text-dark);
   cursor: crosshair;
 
   display: flex;
@@ -294,13 +291,19 @@ body .principal .outlined {
 .skills__cards .skills__card:hover {
   background: var(--bg-dark);
   border-color: var(--border-light);
+  color: var(--text-light);
   scale: 1.1;
 }
 
-.skills__cards .skills__card:hover .skills__cardTitulo,
-.skills__cards .skills__card:hover svg path {
+.skills__cards .skills__card:hover .skills__cardTitulo {
   color: var(--text-light);
-  fill: var(--text-light);
+}
+
+.skills__card .skills__icon,
+.skills__card .skills__icon * {
+  color: inherit;
+  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out,
+    stroke 0.3s ease-in-out;
 }
 
 .skills__card .skills__cardTitulo {
@@ -788,8 +791,9 @@ body .principal .outlined {
 .form__container form .form__submitButton__redes {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  justify-content: space-between;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .form__container .form__submitButton:hover {
@@ -1411,8 +1415,8 @@ body .principal .outlined {
 
 @media screen and (max-width: 480px) {
   .banner__textos .banner__redes {
-    gap: 1.5rem;
-    width: 80%;
+    gap: 0.75rem;
+    width: 100%;
   }
 
   .projeto .projeto__imagemContainer {
@@ -1428,8 +1432,8 @@ body .principal .outlined {
 
 @media screen and (max-width: 375px) {
   .banner__textos .banner__redes {
-    gap: 1rem;
-    width: 90%;
+    gap: 0.6rem;
+    width: 100%;
   }
 
   .projeto .projeto__imagemContainer {
