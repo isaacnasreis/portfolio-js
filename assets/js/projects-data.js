@@ -1,6 +1,33 @@
 const projectsData = [
   {
     id: "01",
+    title: "ReactStore - E-commerce com Integracao de Pagamentos",
+    description:
+      "Simulacao de e-commerce funcional com integracao de pagamentos via Stripe. O projeto demonstra a construcao de uma experiencia de compra completa, com gerenciamento de estado eficiente e uma interface responsiva. Evidencia a aplicacao de boas praticas para criar uma loja virtual escalavel com React.",
+    imageClass: "projeto-reactStore",
+    demoUrl: "https://react-store-lyart.vercel.app/",
+    repoUrl: "https://github.com/isaacnasreis/react-store",
+  },
+  {
+    id: "02",
+    title: "CineScope - Catalogo Interativo de Filmes",
+    description:
+      "Catalogo interativo de filmes que consome a API do TMDB em tempo real. A aplicacao permite pesquisa, visualizacao de detalhes e criacao de uma lista de favoritos com persistencia local. Demonstra forte habilidade em React, gerenciamento de estado e integracao com APIs externas.",
+    imageClass: "projeto-cineScope",
+    demoUrl: "https://cine-scope-mu.vercel.app/",
+    repoUrl: "https://github.com/isaacnasreis/cineScope",
+  },
+  {
+    id: "03",
+    title: "Studio Ghibli Landing Page",
+    description:
+      "Landing page inspirada no universo do Studio Ghibli, desenvolvida com React 19, TypeScript 5 e Vite 8. O projeto utiliza CSS Modules, componentes pequenos e tipagem explicita de props para manter a base escalavel, consistente e com maior seguranca no codigo.",
+    imageClass: "projeto-studioGhibli",
+    demoUrl: "https://studio-ghibli-taupe.vercel.app",
+    repoUrl: "https://github.com/isaacnasreis/studio-ghibli",
+  },
+  {
+    id: "04",
     title: "DoIt - Gerenciador de Tarefas Full-Stack",
     description:
       "Solução full-stack para gerenciamento de tarefas com autenticação JWT. O projeto demonstra a criação de um back-end robusto com Node.js e um front-end reativo e otimizado para SEO com Nuxt.js, focando em uma experiência de usuário intuitiva, responsiva e acessível.",
@@ -9,7 +36,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/doIt",
   },
   {
-    id: "02",
+    id: "05",
     title: "VortexAdmin - Dashboard Administrativo Interativo",
     description:
       "Dashboard administrativo interativo para gerenciamento de dados complexos. A plataforma oferece visualização de métricas com gráficos dinâmicos, gestão de usuários e produtos, e temas personalizáveis (Dark/Light). O projeto destaca competências em Vue 3, TypeScript e bibliotecas de visualização de dados.",
@@ -18,25 +45,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/vortexadmin",
   },
   {
-    id: "03",
-    title: "ReactStore - E-commerce com Integração de Pagamentos",
-    description:
-      "Simulação de e-commerce funcional com integração de pagamentos via Stripe. O projeto demonstra a construção de uma experiência de compra completa, com gerenciamento de estado eficiente e uma interface responsiva. Evidencia a aplicação de boas práticas para criar uma loja virtual escalável com React.",
-    imageClass: "projeto-reactStore",
-    demoUrl: "https://react-store-lyart.vercel.app/",
-    repoUrl: "https://github.com/isaacnasreis/react-store",
-  },
-  {
-    id: "04",
-    title: "CineScope - Catálogo Interativo de Filmes",
-    description:
-      "Catálogo interativo de filmes que consome a API do TMDB em tempo real. A aplicação permite pesquisa, visualização de detalhes e criação de uma lista de favoritos com persistência local. Demonstra forte habilidade em React, gerenciamento de estado e integração com APIs externas.",
-    imageClass: "projeto-cineScope",
-    demoUrl: "https://cine-scope-mu.vercel.app/",
-    repoUrl: "https://github.com/isaacnasreis/cineScope",
-  },
-  {
-    id: "05",
+    id: "06",
     title: "Codificador de Texto - Lógica e Manipulação do DOM",
     description:
       "Ferramenta para codificar e decodificar textos em tempo real, construída com JavaScript puro. O projeto demonstra a aplicação de lógica de programação e manipulação direta do DOM para resolver um problema algorítmico e criar uma funcionalidade interativa com tecnologias web fundamentais.",
@@ -45,7 +54,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/alura-challenge-one",
   },
   {
-    id: "06",
+    id: "07",
     title: "Controle de Orçamento - Validação e Persistência de Dados",
     description:
       "Aplicação para controle de despesas com validação de formulários e persistência de dados via Local Storage. O sistema oferece uma experiência guiada para o usuário cadastrar e consultar despesas, com feedback visual claro. Demonstra a criação de uma ferramenta funcional para gerenciamento de dados no lado do cliente.",
@@ -54,7 +63,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/orcamento-pessoal",
   },
   {
-    id: "07",
+    id: "08",
     title: "Pokedex - Consumo de API e Renderização Dinâmica",
     description:
       "Pokedex interativa que consome a PokeAPI para exibir dados de Pokémon de forma dinâmica. O projeto destaca a habilidade de realizar requisições assíncronas, processar os dados e renderizar componentes de forma eficiente, resultando em uma experiência de usuário fluida e responsiva.",
@@ -63,7 +72,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/js-developer-pokedex",
   },
   {
-    id: "08",
+    id: "09",
     title: "Jogo da Velha - Lógica de Jogo e Interatividade",
     description:
       "Implementação do clássico Jogo da Velha com JavaScript puro. O projeto demonstra a aplicação de lógica de programação para gerenciar o estado do jogo, validar jogadas e determinar o vencedor, evidenciando a capacidade de criar interatividade e regras de negócio no front-end.",

@@ -191,10 +191,15 @@ body {
 
 body .principal .outlined {
   color: var(--text-light);
-  text-shadow: 1.41px 1.41px var(--text-dark), 2px 0 var(--text-dark),
-    1.41px -1.41px var(--text-dark), 0 -2px var(--text-dark),
-    -1.41px -1.41px var(--text-dark), -2px 0 var(--text-dark),
-    1.41px 1.41px var(--text-dark), 0 2px var(--text-dark);
+  text-shadow:
+    1.41px 1.41px var(--text-dark),
+    2px 0 var(--text-dark),
+    1.41px -1.41px var(--text-dark),
+    0 -2px var(--text-dark),
+    -1.41px -1.41px var(--text-dark),
+    -2px 0 var(--text-dark),
+    1.41px 1.41px var(--text-dark),
+    0 2px var(--text-dark);
 }
 
 .banner__textos .banner__descricao {
@@ -248,7 +253,9 @@ body .principal .outlined {
 .banner__redes .banner__redes-link svg,
 .banner__redes .banner__redes-link svg * {
   color: inherit;
-  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out,
+  transition:
+    color 0.3s ease-in-out,
+    fill 0.3s ease-in-out,
     stroke 0.3s ease-in-out;
 }
 
@@ -302,7 +309,9 @@ body .principal .outlined {
 .skills__card .skills__icon,
 .skills__card .skills__icon * {
   color: inherit;
-  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out,
+  transition:
+    color 0.3s ease-in-out,
+    fill 0.3s ease-in-out,
     stroke 0.3s ease-in-out;
 }
 
@@ -572,8 +581,11 @@ body .principal .outlined {
 
 .projeto .projeto__imagemContainer {
   border-radius: 18.761px;
-  background: url("../img/image\ 770.jpg"), lightgray 50% / cover no-repeat;
-  box-shadow: 0px 12px 42px -4px rgba(24, 39, 75, 0.12),
+  background:
+    url("../img/image\ 770.jpg"),
+    lightgray 50% / cover no-repeat;
+  box-shadow:
+    0px 12px 42px -4px rgba(24, 39, 75, 0.12),
     0px 8px 18px -6px rgba(24, 39, 75, 0.12);
 
   width: 100%;
@@ -607,6 +619,12 @@ body .principal .outlined {
 
 .projeto .projeto__imagemContainer.projeto-reactStore {
   background: url("../img/projeto-reactStore.png") no-repeat center / cover;
+}
+
+.projeto .projeto__imagemContainer.projeto-studioGhibli {
+  background:
+    linear-gradient(rgba(19, 28, 44, 0.35), rgba(19, 28, 44, 0.35)),
+    url("../img/projeto-studio-ghibli.png") no-repeat center / cover;
 }
 
 .projeto .projeto__imagemContainer.projeto-vortexAdmin {
@@ -931,7 +949,9 @@ body .principal .outlined {
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: inline-flex;
   align-items: center;
   gap: 10px;

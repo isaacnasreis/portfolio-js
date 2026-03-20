@@ -7,7 +7,7 @@ function setupMobileMenu() {
   if (!menuToggle || !menuNav || !closeButton) return;
 
   const focusableElements = menuNav.querySelectorAll(
-    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
   );
   const firstFocusableElement = focusableElements[0];
   const lastFocusableElement = focusableElements[focusableElements.length - 1];
@@ -42,7 +42,7 @@ function setupMobileMenu() {
 
     menuToggle.setAttribute(
       "aria-label",
-      isActive ? "Fechar menu" : "Abrir menu"
+      isActive ? "Fechar menu" : "Abrir menu",
     );
 
     if (isActive) {
@@ -133,7 +133,7 @@ class FormSubmit {
     const submissionTime = new Date().getTime();
     const loadTime = parseInt(
       this.form.querySelector('[name="_time"]').value,
-      10
+      10,
     );
     if (submissionTime - loadTime < 3000) {
       console.log("Form submitted too quickly. Likely a bot.");
@@ -188,7 +188,7 @@ class FormSubmit {
       } else {
         this.resetFormButton();
         throw new Error(
-          `O servidor respondeu com o status: ${response.status}`
+          `O servidor respondeu com o status: ${response.status}`,
         );
       }
     } catch (error) {
@@ -225,7 +225,7 @@ function setupScrollAnimation() {
     },
     {
       threshold: 0.1,
-    }
+    },
   );
 
   animatedElements.forEach((element) => {
@@ -247,8 +247,8 @@ function createSkillElement(skill) {
   skillCard.innerHTML = `
     ${normalizedSvg}
     <h3 class="skills__cardTitulo" style="${skill.customTitleStyle || ""}">${
-    skill.title
-  }</h3>
+      skill.title
+    }</h3>
   `;
 
   const icon = skillCard.querySelector("svg");
@@ -296,7 +296,7 @@ function createProjectElement(project) {
         (link) => `
       <a class="projeto__link" href="${link.url}" target="_blank" rel="noopener noreferrer">
         ${linkSVG} ${link.text}
-      </a>`
+      </a>`,
       )
       .join("");
   } else {
@@ -329,7 +329,7 @@ function setupProjectsToggle(projects) {
   const toggleButton = document.querySelector(".projetos__toggle");
   if (!container || !toggleButton || !Array.isArray(projects)) return;
 
-  const initialVisibleProjects = 4;
+  const initialVisibleProjects = 6;
   let isExpanded = false;
 
   const renderProjects = () => {
