@@ -1,7 +1,7 @@
 # Meu Portfólio Pessoal
 
 <p align="center">
-  <img src="./assets/img/portfolio.png" alt="Preview do Portfolio" width="800"/>
+  <img src="./assets/img/portfolio.webp" alt="Preview do Portfolio" width="800"/>
 </p>
 
 <p align="center">
