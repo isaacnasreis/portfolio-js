@@ -285,6 +285,17 @@ const linkSVG = `
   </svg>
 `;
 
+const figmaSVG = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+    <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+    <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+    <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+    <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+    <path d="M5 19.5l7-3.5v-4"></path>
+  </svg>
+`;
+
 function createProjectElement(project) {
   const projectArticle = document.createElement("article");
   projectArticle.className = "projeto animate";
@@ -307,13 +318,30 @@ function createProjectElement(project) {
       <a class="projeto__link" href="${project.repoUrl}" target="_blank" rel="noopener noreferrer">
         ${linkSVG} Repositório
       </a>`;
+      
+    if (project.figmaUrl) {
+      linksHtml += `
+        <a class="projeto__link figma-link" href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer">
+          ${figmaSVG} Figma
+        </a>`;
+    }
   }
 
-  const imageContainer = `<div class="projeto__imagemContainer ${project.imageClass}"></div>`;
+  let tagsHtml = "";
+  if (project.tags && project.tags.length > 0) {
+    tagsHtml = `<div class="projeto__tags">${project.tags.map(tag => `<span class="projeto__tag">${tag}</span>`).join("")}</div>`;
+  }
+
+  const imageContainer = `<div class="projeto__imagemContainer ${project.imageClass}">
+    <div class="projeto__imagemOverlay">
+      <button class="projeto__botao-modal" data-project-title="${project.title}">Ver Detalhes</button>
+    </div>
+  </div>`;
+  
   const textContainer = `
     <div class="projeto__textoContainer">
-      ${project.id ? `<h3 class="projeto__numero">${project.id}</h3>` : ""}
       <h3 class="projeto__titulo">${project.title}</h3>
+      ${tagsHtml}
       <p class="projeto__descricao">${project.description}</p>
       <div class="projeto__linksContainer">${linksHtml}</div>
     </div>
@@ -321,7 +349,95 @@ function createProjectElement(project) {
 
   projectArticle.innerHTML = imageContainer + textContainer;
 
+  // Add event listener to the button inside image overlay
+  const modalButton = projectArticle.querySelector('.projeto__botao-modal');
+  if(modalButton) {
+    modalButton.addEventListener('click', () => openModal(project));
+  }
+
   return projectArticle;
+}
+
+// Modal Logic
+function setupModal() {
+  const modal = document.getElementById("projetoModal");
+  if (!modal) return;
+  const closeButtons = modal.querySelectorAll("[data-close-modal]");
+  
+  closeButtons.forEach(btn => {
+    btn.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.getAttribute("aria-hidden")) {
+      closeModal();
+    }
+  });
+}
+
+function openModal(project) {
+  const modal = document.getElementById("projetoModal");
+  const modalTitulo = document.getElementById("modal-titulo");
+  const modalDescricao = document.getElementById("modalDescricao");
+  const modalTags = document.getElementById("modalTags");
+  const modalLinks = document.getElementById("modalLinks");
+  const modalGaleria = document.getElementById("modalGaleria");
+
+  if (!modal) return;
+
+  // Populate data
+  modalTitulo.textContent = project.title;
+  modalDescricao.innerHTML = project.fullDescription || project.description;
+  
+  // Tags
+  if (project.tags) {
+    modalTags.innerHTML = project.tags.map(tag => `<span class="projeto__tag">${tag}</span>`).join("");
+  } else {
+    modalTags.innerHTML = "";
+  }
+
+  // Links
+  let linksHtml = "";
+  if (project.customLinks) {
+    linksHtml = project.customLinks.map(link => `<a class="projeto__link" href="${link.url}" target="_blank" rel="noopener noreferrer">${linkSVG} ${link.text}</a>`).join("");
+  } else {
+    linksHtml = `
+      <a class="projeto__link" href="${project.demoUrl}" target="_blank" rel="noopener noreferrer">${linkSVG} Demo</a>
+      <a class="projeto__link" href="${project.repoUrl}" target="_blank" rel="noopener noreferrer">${linkSVG} Repositório</a>
+    `;
+    if (project.figmaUrl) {
+      linksHtml += `<a class="projeto__link figma-link" href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer">${figmaSVG} Figma</a>`;
+    }
+  }
+  modalLinks.innerHTML = linksHtml;
+
+  // Gallery
+  modalGaleria.innerHTML = "";
+  if (project.gallery && project.gallery.length > 0) {
+    project.gallery.forEach(imgSrc => {
+      const img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = "Imagem do projeto";
+      img.className = "projeto-modal__imagem";
+      modalGaleria.appendChild(img);
+    });
+  } else {
+    // Se não tiver imagens na galeria, usa a classe de imagem (background) como uma div provisória
+    const placeholder = document.createElement("div");
+    placeholder.className = `projeto-modal__imagem-placeholder ${project.imageClass}`;
+    modalGaleria.appendChild(placeholder);
+  }
+
+  // Open modal
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+}
+
+function closeModal() {
+  const modal = document.getElementById("projetoModal");
+  if (!modal) return;
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("no-scroll");
 }
 
 function setupProjectsToggle(projects) {
@@ -401,6 +517,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setupProjectsToggle(projectsData);
+  setupModal();
 
   setupScrollAnimation();
 

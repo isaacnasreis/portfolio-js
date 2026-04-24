@@ -1,90 +1,107 @@
 const projectsData = [
   {
-    id: "01",
-    title: "ReactStore - E-commerce com Integracao de Pagamentos",
-    description:
-      "Simulacao de e-commerce funcional com integracao de pagamentos via Stripe. O projeto demonstra a construcao de uma experiencia de compra completa, com gerenciamento de estado eficiente e uma interface responsiva. Evidencia a aplicacao de boas praticas para criar uma loja virtual escalavel com React.",
+    title: "ReactStore - E-commerce com Integração de Pagamentos",
+    description: "Simulação de e-commerce funcional com integração de pagamentos via Stripe. Demonstra a construção de uma experiência de compra completa e responsiva.",
+    fullDescription: "O ReactStore é uma simulação robusta de um e-commerce moderno. O foco principal deste projeto foi desenvolver uma arquitetura escalável utilizando React, garantindo um gerenciamento de estado eficiente. A integração com a API do Stripe permite um fluxo de checkout realista e seguro. A interface foi cuidadosamente projetada para oferecer a melhor experiência ao usuário (UX), com transições suaves e design totalmente responsivo.",
     imageClass: "projeto-reactStore",
     demoUrl: "https://react-store-lyart.vercel.app/",
     repoUrl: "https://github.com/isaacnasreis/react-store",
+    figmaUrl: "",
+    tags: ["React", "Stripe API", "E-commerce", "UX/UI"],
+    gallery: []
   },
   {
-    id: "02",
-    title: "CineScope - Catalogo Interativo de Filmes",
-    description:
-      "Catalogo interativo de filmes que consome a API do TMDB em tempo real. A aplicacao permite pesquisa, visualizacao de detalhes e criacao de uma lista de favoritos com persistencia local. Demonstra forte habilidade em React, gerenciamento de estado e integracao com APIs externas.",
+    title: "CineScope - Catálogo Interativo de Filmes",
+    description: "Catálogo interativo que consome a API do TMDB em tempo real, permitindo pesquisa, visualização de detalhes e lista de favoritos.",
+    fullDescription: "Desenvolvido para amantes do cinema, o CineScope é um catálogo interativo de alta performance. Ele se conecta à API do TMDB para buscar dados em tempo real, exibindo detalhes enriquecidos de filmes e séries. Implementei funcionalidades como busca em tempo real, filtros por gênero e uma lista de favoritos utilizando Local Storage. A UI foi pensada para destacar os pôsteres e informações cruciais de forma limpa e atraente.",
     imageClass: "projeto-cineScope",
     demoUrl: "https://cine-scope-mu.vercel.app/",
     repoUrl: "https://github.com/isaacnasreis/cineScope",
+    figmaUrl: "",
+    tags: ["React", "TMDB API", "Local Storage", "Design System"],
+    gallery: []
   },
   {
-    id: "03",
     title: "Studio Ghibli Landing Page",
-    description:
-      "Landing page inspirada no universo do Studio Ghibli, desenvolvida com React 19, TypeScript 5 e Vite 8. O projeto utiliza CSS Modules, componentes pequenos e tipagem explicita de props para manter a base escalavel, consistente e com maior seguranca no codigo.",
+    description: "Landing page inspirada no universo do Studio Ghibli, desenvolvida com React 19, TypeScript 5 e Vite 8.",
+    fullDescription: "Uma homenagem visual ao Studio Ghibli. Este projeto é uma Landing Page focada fortemente em UI/UX e animações CSS. Utilizei o poder do React 19 em conjunto com o TypeScript 5 para tipagem forte e manutenção segura. O uso de CSS Modules garantiu que o escopo de estilos permanecesse isolado, permitindo um design rico em detalhes, texturas e micro-interações que encantam o usuário.",
     imageClass: "projeto-studioGhibli",
     demoUrl: "https://studio-ghibli-taupe.vercel.app",
     repoUrl: "https://github.com/isaacnasreis/studio-ghibli",
+    figmaUrl: "https://www.figma.com/design/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---CodeLab?node-id=5854-2",
+    tags: ["React 19", "TypeScript", "Vite", "CSS Modules", "UI Design"],
+    gallery: []
   },
   {
-    id: "04",
     title: "DoIt - Gerenciador de Tarefas Full-Stack",
-    description:
-      "Solução full-stack para gerenciamento de tarefas com autenticação JWT. O projeto demonstra a criação de um back-end robusto com Node.js e um front-end reativo e otimizado para SEO com Nuxt.js, focando em uma experiência de usuário intuitiva, responsiva e acessível.",
+    description: "Solução full-stack para gerenciamento de tarefas com autenticação JWT. Back-end com Node.js e front-end com Nuxt.js.",
+    fullDescription: "O DoIt vai além de uma simples lista de tarefas. É uma aplicação Full-Stack completa, englobando desde a criação do banco de dados e APIs RESTful até a interface de usuário final. O backend em Node.js gerencia rotas seguras com autenticação JWT, enquanto o frontend em Nuxt.js oferece uma experiência ágil (SPA) com ótimo SEO. O design foi projetado para focar na produtividade e redução de atrito cognitivo.",
     imageClass: "projeto-doIt",
     demoUrl: "https://doit-jade.vercel.app/",
     repoUrl: "https://github.com/isaacnasreis/doIt",
+    figmaUrl: "",
+    tags: ["Nuxt.js", "Node.js", "JWT", "Full-Stack", "Productivity"],
+    gallery: []
   },
   {
-    id: "05",
     title: "VortexAdmin - Dashboard Administrativo Interativo",
-    description:
-      "Dashboard administrativo interativo para gerenciamento de dados complexos. A plataforma oferece visualização de métricas com gráficos dinâmicos, gestão de usuários e produtos, e temas personalizáveis (Dark/Light). O projeto destaca competências em Vue 3, TypeScript e bibliotecas de visualização de dados.",
+    description: "Dashboard administrativo interativo para visualização de métricas com gráficos dinâmicos e gestão de usuários.",
+    fullDescription: "Projetado para facilitar a tomada de decisões, o VortexAdmin é um painel de controle que processa e exibe grandes volumes de dados através de gráficos interativos. Construído com Vue 3 e TypeScript, a arquitetura garante flexibilidade e estabilidade. A implementação de temas dinâmicos (Dark/Light mode) e a estrutura modular dos componentes demonstram a preocupação com usabilidade e acessibilidade corporativa.",
     imageClass: "projeto-vortexAdmin",
     demoUrl: "https://vortexadmin.netlify.app/",
     repoUrl: "https://github.com/isaacnasreis/vortexadmin",
+    figmaUrl: "",
+    tags: ["Vue 3", "TypeScript", "Dashboard", "Data Viz"],
+    gallery: []
   },
   {
-    id: "06",
-    title: "Codificador de Texto - Lógica e Manipulação do DOM",
-    description:
-      "Ferramenta para codificar e decodificar textos em tempo real, construída com JavaScript puro. O projeto demonstra a aplicação de lógica de programação e manipulação direta do DOM para resolver um problema algorítmico e criar uma funcionalidade interativa com tecnologias web fundamentais.",
+    title: "Codificador de Texto",
+    description: "Ferramenta para codificar e decodificar textos em tempo real, focada em manipulação direta do DOM.",
+    fullDescription: "Um excelente exercício de lógica de programação e algoritmos de criptografia básica. O Codificador de Texto foi construído inteiramente com Vanilla JavaScript. O desafio principal foi implementar uma manipulação de DOM impecável, garantindo que as transformações de texto acontecessem em tempo real sem travamentos, além de permitir o uso prático de copiar/colar de forma intuitiva na interface.",
     imageClass: "projeto-encoderDecoder",
     demoUrl: "https://isaacnreis.github.io/alura-challenge-one/",
     repoUrl: "https://github.com/isaacnasreis/alura-challenge-one",
+    figmaUrl: "",
+    tags: ["JavaScript", "Lógica", "DOM", "CSS"],
+    gallery: []
   },
   {
-    id: "07",
-    title: "Controle de Orçamento - Validação e Persistência de Dados",
-    description:
-      "Aplicação para controle de despesas com validação de formulários e persistência de dados via Local Storage. O sistema oferece uma experiência guiada para o usuário cadastrar e consultar despesas, com feedback visual claro. Demonstra a criação de uma ferramenta funcional para gerenciamento de dados no lado do cliente.",
+    title: "Controle de Orçamento",
+    description: "Aplicação para controle de despesas com validação de formulários e persistência de dados via Local Storage.",
+    fullDescription: "Uma aplicação utilitária pensada para o dia a dia. O Controle de Orçamento permite ao usuário registrar, categorizar e listar suas despesas financeiras. O ponto forte do projeto é a validação rigorosa de formulários e a persistência de dados localmente (Local Storage). A UI limpa guia o usuário a inserir os dados corretamente, prevenindo erros comuns.",
     imageClass: "projeto-orcamentoPessoal",
     demoUrl: "https://isaacnreis.github.io/orcamento-pessoal/",
     repoUrl: "https://github.com/isaacnasreis/orcamento-pessoal",
+    figmaUrl: "",
+    tags: ["JavaScript", "Local Storage", "Formulários", "UX"],
+    gallery: []
   },
   {
-    id: "08",
-    title: "Pokedex - Consumo de API e Renderização Dinâmica",
-    description:
-      "Pokedex interativa que consome a PokeAPI para exibir dados de Pokémon de forma dinâmica. O projeto destaca a habilidade de realizar requisições assíncronas, processar os dados e renderizar componentes de forma eficiente, resultando em uma experiência de usuário fluida e responsiva.",
+    title: "Pokedex API",
+    description: "Pokedex interativa que consome a PokeAPI para exibir dados dinâmicos, destacando habilidades de requisições assíncronas.",
+    fullDescription: "Integrando a famosa PokeAPI, este projeto é uma demonstração clara de habilidades com requisições assíncronas (Fetch API / Axios) e tratamento de promessas. Os dados recebidos são estruturados dinamicamente em cards visuais que mudam de cor conforme o tipo do Pokémon. A paginação em tempo real e o carregamento otimizado proporcionam uma experiência fluida mesmo ao processar centenas de itens.",
     imageClass: "projeto-pokedex",
     demoUrl: "https://js-developer-pokedex-isaacnreis.vercel.app/",
     repoUrl: "https://github.com/isaacnasreis/js-developer-pokedex",
+    figmaUrl: "",
+    tags: ["JavaScript", "PokeAPI", "Assincronismo", "Dynamic UI"],
+    gallery: []
   },
   {
-    id: "09",
-    title: "Jogo da Velha - Lógica de Jogo e Interatividade",
-    description:
-      "Implementação do clássico Jogo da Velha com JavaScript puro. O projeto demonstra a aplicação de lógica de programação para gerenciar o estado do jogo, validar jogadas e determinar o vencedor, evidenciando a capacidade de criar interatividade e regras de negócio no front-end.",
+    title: "Jogo da Velha",
+    description: "Implementação do clássico Jogo da Velha com JavaScript puro, destacando o gerenciamento de estados no front-end.",
+    fullDescription: "O clássico Jogo da Velha refeito para demonstrar o controle de estados e lógica condicional avançada em JavaScript. A aplicação rastreia o histórico de jogadas, determina instantaneamente o estado de vitória, derrota ou empate, e permite reiniciar a partida sem recarregar a página. O design é minimalista, focado na jogabilidade.",
     imageClass: "projeto-jogoDaVelha",
     demoUrl: "https://isaacnreis.github.io/jogodavelha/",
     repoUrl: "https://github.com/isaacnasreis/jogodavelha",
+    figmaUrl: "",
+    tags: ["JavaScript", "Game Logic", "CSS Grid", "Interatividade"],
+    gallery: []
   },
   {
-    id: null,
     title: "Explore Mais Projetos no GitHub",
-    description:
-      "Meu perfil no GitHub é um reflexo contínuo da minha jornada como desenvolvedor. Lá você encontrará uma variedade de outros projetos, experimentos e contribuições que demonstram minha paixão por aprender e construir. Explore para ver mais de perto meu código e minhas áreas de interesse.",
+    description: "Meu perfil no GitHub é um reflexo contínuo da minha jornada. Veja uma variedade de outros projetos, experimentos e contribuições.",
+    fullDescription: "O aprendizado nunca para. Além dos projetos destacados aqui, mantenho um repositório ativo no GitHub com dezenas de outros testes, contribuições open-source e projetos em andamento. Sinta-se à vontade para explorar meu código, minhas PRs e entender como eu organizo meus commits e estruturas de projeto.",
     imageClass: "projeto-git",
     customLinks: [
       { text: "Link Para GitHub", url: "https://github.com/isaacnasreis" },
@@ -93,5 +110,8 @@ const projectsData = [
         url: "https://github.com/isaacnasreis/portfolio-novo",
       },
     ],
+    figmaUrl: "",
+    tags: ["Open Source", "Contínuo", "Versionamento"],
+    gallery: []
   },
 ];

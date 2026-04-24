@@ -1,606 +1,435 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="author" content="Isaac Reis" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfólio de Isaac Reis, desenvolvedor Full-Stack especializado na criação de aplicações web modernas e de alta qualidade, com foco em performance, responsividade e experiência do usuário."
-    />
-    <meta
-      name="keywords"
-      content="sites, web, desenvolvimento, programador, frontend, front-end, fullstack, full stack, freelancer, freela, website, portfólio"
-    />
-    <title>Portfólio | Isaac Reis - Desenvolvedor Full-Stack</title>
-    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon" />
-    <link rel="canonical" href="https://isaacnasreis.github.io/portfolio/" />
-    <link rel="icon" href="assets/img/logo.png" />
-    <link rel="apple-touch-icon" href="assets/img/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <header class="cabecalho section">
-      <img src="assets/img/logo.png" alt="Logo" class="cabecalho__logo" />
-      <nav class="cabecalho__nav" aria-label="Navegação Principal">
-        <a href="#sobreMim" class="cabecalho__link">Sobre Mim</a>
-        <a href="#habilidades" class="cabecalho__link">Habilidades</a>
-        <a href="#projetos" class="cabecalho__link">Projetos</a>
-        <a href="#contato" class="cabecalho__link">Contato</a>
-      </nav>
-      <div class="cabecalho__botao-container">
-        <a
-          href="assets/curriculo.pdf"
-          download="curriculo_Isaac-Reis"
-          class="cabecalho__botao"
-          >Currículo</a
-        >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17.5 12.5V13.5C17.5 14.9001 17.5 15.6002 17.2275 16.135C16.9878 16.6054 16.6054 16.9878 16.135 17.2275C15.6002 17.5 14.9001 17.5 13.5 17.5H6.5C5.09987 17.5 4.3998 17.5 3.86502 17.2275C3.39462 16.9878 3.01217 16.6054 2.77248 16.135C2.5 15.6002 2.5 14.9001 2.5 13.5V12.5M14.1667 8.33333L10 12.5M10 12.5L5.83333 8.33333M10 12.5V2.5"
-            stroke="#f8f9fa"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Isaac Reis" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfólio de Isaac Reis, desenvolvedor Full-Stack especializado na criação de aplicações web modernas e de alta qualidade, com foco em performance, responsividade e experiência do usuário." />
+  <meta name="keywords"
+    content="sites, web, desenvolvimento, programador, frontend, front-end, fullstack, full stack, freelancer, freela, website, portfólio" />
+  <title>Portfólio | Isaac Reis - Desenvolvedor Full-Stack</title>
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon" />
+  <link rel="canonical" href="https://isaacnasreis.github.io/portfolio/" />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="apple-touch-icon" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="cabecalho section">
+    <img src="assets/img/logo.png" alt="Logo" class="cabecalho__logo" />
+    <nav class="cabecalho__nav" aria-label="Navegação Principal">
+      <a href="#sobreMim" class="cabecalho__link">Sobre Mim</a>
+      <a href="#habilidades" class="cabecalho__link">Habilidades</a>
+      <a href="#projetos" class="cabecalho__link">Projetos</a>
+      <a href="#contato" class="cabecalho__link">Contato</a>
+    </nav>
+    <div class="cabecalho__botao-container">
+      <a href="assets/curriculo.pdf" download="Curriculo_Isaac-Reis" class="cabecalho__botao">Currículo</a>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.5 12.5V13.5C17.5 14.9001 17.5 15.6002 17.2275 16.135C16.9878 16.6054 16.6054 16.9878 16.135 17.2275C15.6002 17.5 14.9001 17.5 13.5 17.5H6.5C5.09987 17.5 4.3998 17.5 3.86502 17.2275C3.39462 16.9878 3.01217 16.6054 2.77248 16.135C2.5 15.6002 2.5 14.9001 2.5 13.5V12.5M14.1667 8.33333L10 12.5M10 12.5L5.83333 8.33333M10 12.5V2.5"
+          stroke="#f8f9fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div class="cabecalho__menu-mobile">
+      <button class="cabecalho__menu-toggle" aria-label="Abrir menu" aria-controls="menu-mobile-nav"
+        aria-expanded="false">
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true" focusable="false">
+          <path d="M0.5 10V8.33333H15.5V10H0.5ZM0.5 5.83333V4.16667H15.5V5.83333H0.5ZM0.5 1.66667V0H15.5V1.66667H0.5Z"
+            fill="#212529" />
         </svg>
+      </button>
+      <div id="menu-mobile-nav" class="cabecalho__menu-mobile--nav" role="dialog" aria-modal="true"
+        aria-labelledby="menu-mobile-titulo" aria-hidden="true">
+        <button class="cabecalho__menu-mobile--fechar">Fechar</button>
+        <nav class="cabecalho__navMobile" aria-label="Navegação Principal Mobile">
+          <a href="#sobreMim" class="cabecalho__navMobilelink">Sobre Mim</a>
+          <a href="#habilidades" class="cabecalho__navMobilelink">Habilidades</a>
+          <a href="#projetos" class="cabecalho__navMobilelink">Projetos</a>
+          <a href="#contato" class="cabecalho__navMobilelink">Contato</a>
+          <h2 id="menu-mobile-titulo" class="sr-only">Navegação Principal</h2>
+        </nav>
+        <img src="assets/img/logo.png" alt="Logo" class="cabecalho__logo" style="filter: invert()" />
       </div>
-      <div class="cabecalho__menu-mobile">
-        <button
-          class="cabecalho__menu-toggle"
-          aria-label="Abrir menu"
-          aria-controls="menu-mobile-nav"
-          aria-expanded="false"
-        >
-          <svg
-            width="16"
-            height="10"
-            viewBox="0 0 16 10"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M0.5 10V8.33333H15.5V10H0.5ZM0.5 5.83333V4.16667H15.5V5.83333H0.5ZM0.5 1.66667V0H15.5V1.66667H0.5Z"
-              fill="#212529"
-            />
-          </svg>
-        </button>
-        <div
-          id="menu-mobile-nav"
-          class="cabecalho__menu-mobile--nav"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="menu-mobile-titulo"
-          aria-hidden="true"
-        >
-          <button class="cabecalho__menu-mobile--fechar">Fechar</button>
-          <nav
-            class="cabecalho__navMobile"
-            aria-label="Navegação Principal Mobile"
-          >
-            <a href="#sobreMim" class="cabecalho__navMobilelink">Sobre Mim</a>
-            <a href="#habilidades" class="cabecalho__navMobilelink"
-              >Habilidades</a
-            >
-            <a href="#projetos" class="cabecalho__navMobilelink">Projetos</a>
-            <a href="#contato" class="cabecalho__navMobilelink">Contato</a>
-            <h2 id="menu-mobile-titulo" class="sr-only">Navegação Principal</h2>
-          </nav>
-          <img
-            src="assets/img/logo.png"
-            alt="Logo"
-            class="cabecalho__logo"
-            style="filter: invert()"
-          />
-        </div>
-      </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="principal">
-      <section class="banner section" aria-labelledby="banner-titulo">
-        <img
-          class="banner__imagem"
-          src="assets/img/boy3.svg"
-          alt="Ilustração em preto e branco de um menino sentado com um tablet na mão"
-        />
-        <div class="banner__textos">
-          <div class="banner__titulo">
-            <div style="display: flex" id="banner-titulo">
-              <h1 class="banner__titulo-fw400">Olá eu sou&nbsp;</h1>
-              <h1 class="banner__titulo-fw800">Isaac Reis.</h1>
-            </div>
-            <div style="display: flex">
-              <h1 class="banner__titulo-fw800">Full-Stack&nbsp;</h1>
-              <h1 class="banner__titulo-fw800 outlined">Developer</h1>
-            </div>
+  <main class="principal">
+    <section class="banner section" aria-labelledby="banner-titulo">
+      <img class="banner__imagem" src="assets/img/boy3.svg"
+        alt="Ilustração em preto e branco de um menino sentado com um tablet na mão" />
+      <div class="banner__textos">
+        <div class="banner__titulo">
+          <div style="display: flex" id="banner-titulo">
+            <h1 class="banner__titulo-fw400">Olá eu sou&nbsp;</h1>
+            <h1 class="banner__titulo-fw800">Isaac Reis.</h1>
           </div>
-          <div class="banner__descricao">
-            Desenvolvedor Full-Stack com experiência em criar aplicações web
-            modernas e eficientes, desde o front-end até o back-end. Minha
-            atuação abrange desde o levantamento de requisitos até a entrega
-            final, com foco em interfaces responsivas, consumo de APIs e
-            manutenção de sistemas. Em busca de aprimoramento contínuo, estou
-            cursando Pós-graduação em UX-Engineering para integrar design e
-            desenvolvimento, priorizando a experiência do usuário em cada
-            projeto.
-          </div>
-
-          <ul class="banner__redes">
-            <li role="listitem">
-              <a
-                href="https://www.linkedin.com/in/isaacnreis/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="banner__redes-link"
-                aria-label="LinkedIn"
-              >
-                <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M6.94 8.5A1.44 1.44 0 1 1 6.94 5.62A1.44 1.44 0 0 1 6.94 8.5ZM5.7 9.8h2.5V18h-2.5zM10.1 9.8h2.4v1.1h.03c.33-.63 1.16-1.3 2.4-1.3 2.57 0 3.07 1.69 3.07 3.88V18h-2.5v-3.97c0-.95-.02-2.16-1.32-2.16-1.32 0-1.52 1.03-1.52 2.09V18h-2.56V9.8z" fill="currentColor"/>
-                </svg>
-              </a>
-            </li>
-            <li role="listitem">
-              <a
-                href="https://github.com/isaacnasreis"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="banner__redes-link"
-                aria-label="GitHub"
-              >
-                <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M12 2a10 10 0 0 0-3.16 19.5c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.88 1.52 2.31 1.08 2.88.83.09-.65.35-1.08.63-1.33-2.21-.25-4.54-1.1-4.54-4.9 0-1.08.39-1.96 1.02-2.65-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.01a9.5 9.5 0 0 1 5 0c1.9-1.28 2.75-1 2.75-1 .54 1.38.2 2.4.1 2.65.63.69 1.01 1.57 1.01 2.65 0 3.8-2.34 4.64-4.57 4.88.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z" fill="currentColor"/>
-                </svg>
-              </a>
-            </li>
-            <li role="listitem">
-              <a
-                href="https://x.com/IsaacNreis"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="banner__redes-link"
-                aria-label="X"
-              >
-                <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M18.9 3H21l-6.9 7.9L22 21h-6.2l-4.86-6.35L5.4 21H3.3l7.38-8.44L2 3h6.35l4.4 5.8L18.9 3zm-1.1 16h1.16L7.72 4.9H6.47z" fill="currentColor"/>
-                </svg>
-              </a>
-            </li>
-            <li role="listitem">
-              <a
-                href="https://www.behance.net/isaacreis"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="banner__redes-link"
-                aria-label="Behance"
-              >
-                <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 6h6.4c2.5 0 3.9 1.35 3.9 3.2 0 1.54-.9 2.4-2.03 2.8 1.47.37 2.55 1.4 2.55 3.2 0 2.28-1.84 3.8-4.53 3.8H4V6zm3 5.2h3.04c.86 0 1.38-.44 1.38-1.17s-.52-1.15-1.38-1.15H7v2.32zm0 5.24h3.24c1.04 0 1.63-.49 1.63-1.34 0-.8-.6-1.3-1.63-1.3H7v2.64zM17.2 8.1h5.3v1.42h-5.3z" fill="currentColor"/>
-                </svg>
-              </a>
-            </li>
-            <li role="listitem">
-              <a
-                href="https://www.youtube.com/@isaacnreisdev"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="banner__redes-link"
-                aria-label="YouTube"
-              >
-                <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M21.58 7.19a2.78 2.78 0 0 0-1.96-1.97C17.9 4.75 12 4.75 12 4.75s-5.9 0-7.62.47A2.78 2.78 0 0 0 2.42 7.2C1.96 8.92 1.96 12 1.96 12s0 3.08.46 4.8a2.78 2.78 0 0 0 1.96 1.97c1.72.47 7.62.47 7.62.47s5.9 0 7.62-.47a2.78 2.78 0 0 0 1.96-1.97c.46-1.72.46-4.8.46-4.8s0-3.08-.46-4.8zM9.9 15.03V8.97L15.1 12 9.9 15.03z" fill="currentColor"/>
-                </svg>
-              </a>
-            </li>
-            <li role="listitem">
-              <a
-                href="mailto:isaacreisn@gmail.com"
-                class="banner__redes-link"
-                aria-label="E-mail"
-              >
-                <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="2"/>
-                  <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="skills animate section"
-        id="habilidades"
-        aria-labelledby="habilidades-titulo"
-      >
-        <h2 class="skills__titulo" id="habilidades-titulo">
-          Minhas <span class="skills__titulo-fw800">Habilidades</span>
-        </h2>
-        <div class="skills__cards"></div>
-      </section>
-
-      <section class="formacoes" aria-labelledby="formacoes-titulo">
-        <h2 class="formacoes__titulo" id="formacoes-titulo">
-          Minhas <span class="formacoes__titulo-fw800">Formações</span>
-        </h2>
-        <div class="formacoes__container"></div>
-      </section>
-
-      <section
-        class="sobreMim animate section"
-        id="sobreMim"
-        aria-labelledby="sobre-mim-titulo"
-      >
-        <div class="sobreMim__imagem">
-          <img
-            src="assets/img/aboutme-boy.svg"
-            alt="Ilustração em preto, branco e cinza de um menino com os braços cruzados com um sorriso confiante no rosto."
-          />
-        </div>
-        <div class="sobreMim-container">
-          <h2 class="sobreMim__titulo" id="sobre-mim-titulo">
-            Sobre <span class="sobreMim__titulo-fw800">Mim</span>
-          </h2>
-          <p>
-            Sou um desenvolvedor Full-Stack apaixonado por criar soluções
-            digitais que unem funcionalidade e experiência do usuário. Minha
-            jornada na tecnologia começou com a graduação em Análise e
-            Desenvolvimento de Sistemas, onde me aprofundei em diversas
-            tecnologias e metodologias de desenvolvimento.
-          </p>
-          <p>
-            Ao longo da minha carreira, tenho trabalhado no ciclo completo de
-            desenvolvimento, desde a concepção e o design até a implementação e
-            manutenção. Minha experiência abrange tanto o front-end, com foco em
-            interfaces responsivas e interativas utilizando Vue.js, React e
-            outras tecnologias, quanto o back-end, onde utilizo PHP, C# e bancos
-            de dados para criar aplicações robustas e escaláveis.
-          </p>
-          <p>
-            Buscando aprimorar minhas habilidades e oferecer soluções ainda mais
-            completas, estou cursando Pós-graduação em UX-Engineering. Acredito
-            que a combinação de desenvolvimento Full-Stack com o conhecimento em
-            UX me permite criar produtos digitais que não apenas funcionam de
-            forma eficiente, mas que também proporcionam uma experiência
-            intuitiva e agradável aos usuários.
-          </p>
-          <p>
-            Além da programação, tenho outros hobbies, especialmente desenho,
-            associado à produção de animação e fotografia. Tenho interesse em
-            filmes, séries e seus detalhes técnicos, assim como em alguns
-            esportes, como basquete, futebol e corrida de rua.
-          </p>
-        </div>
-      </section>
-
-      <section class="projetos" id="projetos" aria-labelledby="projetos-titulo">
-        <h2 class="projetos__titulo" id="projetos-titulo">
-          Meus <span class="projetos__titulo-fw800">Projetos</span>
-        </h2>
-        <div class="projetos__container"></div>
-        <button class="projetos__toggle" type="button" aria-expanded="false">
-          Ver mais projetos
-        </button>
-      </section>
-
-      <section
-        class="contato animate section"
-        id="contato"
-        aria-labelledby="contato-titulo"
-      >
-        <div
-          class="form__container"
-          role="form"
-          aria-labelledby="contato-titulo"
-        >
-          <form
-            action="https://formsubmit.co/ajax/isaacreisn@gmail.com"
-            method="POST"
-            data-form
-          >
-            <input
-              type="hidden"
-              name="_subject"
-              value="Novo Contato do Portfólio!"
-            />
-
-            <input type="text" name="_honey" class="honeypot" />
-
-            <input type="hidden" name="_time" />
-
-            <label for="nome" class="sr-only">Seu nome</label>
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              placeholder="Seu nome*"
-              aria-describedby="error-nome"
-              required
-            />
-            <span id="error-nome" class="error-message"></span>
-
-            <label for="email" class="sr-only">Seu email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email*"
-              aria-describedby="error-email"
-              required
-            />
-            <span id="error-email" class="error-message"></span>
-
-            <label for="site" class="sr-only">Seu site</label>
-            <input
-              type="text"
-              name="site"
-              id="site"
-              placeholder="Seu site (Se existir)"
-            />
-
-            <label for="mensagem" class="sr-only">Sua mensagem</label>
-            <textarea
-              name="mensagem"
-              id="mensagem"
-              placeholder="Como posso te ajudar*"
-              aria-describedby="error-mensagem"
-              required
-            ></textarea>
-            <span id="error-mensagem" class="error-message"></span>
-            <span style="font-size: 0.875rem; color: #71717a"
-              >*Campos obrigatórios</span
-            >
-            <div class="form__submitButton-container">
-              <button class="form__submitButton" type="submit" data-button>
-                Enviar
-              </button>
-              <ul class="banner__redes form__submitButton__redes">
-                <li role="listitem">
-                  <a
-                    href="https://www.linkedin.com/in/isaacnreis/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="banner__redes-link"
-                    aria-label="LinkedIn"
-                  >
-                    <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M6.94 8.5A1.44 1.44 0 1 1 6.94 5.62A1.44 1.44 0 0 1 6.94 8.5ZM5.7 9.8h2.5V18h-2.5zM10.1 9.8h2.4v1.1h.03c.33-.63 1.16-1.3 2.4-1.3 2.57 0 3.07 1.69 3.07 3.88V18h-2.5v-3.97c0-.95-.02-2.16-1.32-2.16-1.32 0-1.52 1.03-1.52 2.09V18h-2.56V9.8z" fill="currentColor"/>
-                    </svg>
-                  </a>
-                </li>
-                <li role="listitem">
-                  <a
-                    href="https://github.com/isaacnasreis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="banner__redes-link"
-                    aria-label="GitHub"
-                  >
-                    <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M12 2a10 10 0 0 0-3.16 19.5c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.88 1.52 2.31 1.08 2.88.83.09-.65.35-1.08.63-1.33-2.21-.25-4.54-1.1-4.54-4.9 0-1.08.39-1.96 1.02-2.65-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.01a9.5 9.5 0 0 1 5 0c1.9-1.28 2.75-1 2.75-1 .54 1.38.2 2.4.1 2.65.63.69 1.01 1.57 1.01 2.65 0 3.8-2.34 4.64-4.57 4.88.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z" fill="currentColor"/>
-                    </svg>
-                  </a>
-                </li>
-                <li role="listitem">
-                  <a
-                    href="https://x.com/IsaacNreis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="banner__redes-link"
-                    aria-label="X"
-                  >
-                    <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M18.9 3H21l-6.9 7.9L22 21h-6.2l-4.86-6.35L5.4 21H3.3l7.38-8.44L2 3h6.35l4.4 5.8L18.9 3zm-1.1 16h1.16L7.72 4.9H6.47z" fill="currentColor"/>
-                    </svg>
-                  </a>
-                </li>
-                <li role="listitem">
-                  <a
-                    href="https://www.behance.net/isaacreis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="banner__redes-link"
-                    aria-label="Behance"
-                  >
-                    <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M4 6h6.4c2.5 0 3.9 1.35 3.9 3.2 0 1.54-.9 2.4-2.03 2.8 1.47.37 2.55 1.4 2.55 3.2 0 2.28-1.84 3.8-4.53 3.8H4V6zm3 5.2h3.04c.86 0 1.38-.44 1.38-1.17s-.52-1.15-1.38-1.15H7v2.32zm0 5.24h3.24c1.04 0 1.63-.49 1.63-1.34 0-.8-.6-1.3-1.63-1.3H7v2.64zM17.2 8.1h5.3v1.42h-5.3z" fill="currentColor"/>
-                    </svg>
-                  </a>
-                </li>
-                <li role="listitem">
-                  <a
-                    href="https://www.youtube.com/@isaacnreisdev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="banner__redes-link"
-                    aria-label="YouTube"
-                  >
-                    <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M21.58 7.19a2.78 2.78 0 0 0-1.96-1.97C17.9 4.75 12 4.75 12 4.75s-5.9 0-7.62.47A2.78 2.78 0 0 0 2.42 7.2C1.96 8.92 1.96 12 1.96 12s0 3.08.46 4.8a2.78 2.78 0 0 0 1.96 1.97c1.72.47 7.62.47 7.62.47s5.9 0 7.62-.47a2.78 2.78 0 0 0 1.96-1.97c.46-1.72.46-4.8.46-4.8s0-3.08-.46-4.8zM9.9 15.03V8.97L15.1 12 9.9 15.03z" fill="currentColor"/>
-                    </svg>
-                  </a>
-                </li>
-                <li role="listitem">
-                  <a
-                    href="mailto:isaacreisn@gmail.com"
-                    class="banner__redes-link"
-                    aria-label="E-mail"
-                  >
-                    <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="2"/>
-                      <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </form>
-        </div>
-        <div class="contato__info">
-          <div class="contato__info-titulos">
-            <h2 class="contato__info__titulo" id="contato-titulo">
-              Vamos <span class="outlined">conversar</span> sobre
-            </h2>
-            <h2 class="contato__info__titulo">Algumas coisas especiais</h2>
-          </div>
-          <div class="contato__info-descricao">
-            <p>
-              Meu objetivo é ir além do código para criar experiências digitais
-              intuitivas, envolventes e memoráveis, que realmente se conectem
-              com o usuário.
-            </p>
-          </div>
-          <div class="contato__info-meios">
-            <h3>isaacnreis@gmail.com</h3>
-            <h3>+55 (31) 97152-4933</h3>
+          <div style="display: flex">
+            <h1 class="banner__titulo-fw800">Full-Stack&nbsp;</h1>
+            <h1 class="banner__titulo-fw800 outlined">Developer</h1>
           </div>
         </div>
-      </section>
+        <div class="banner__descricao">
+          Desenvolvedor Full-Stack e Web Designer focado na criação de experiências digitais completas. Minha atuação
+          integra o planejamento estratégico, o design de interfaces (UX/UI) e o desenvolvimento técnico robusto, do
+          front-end ao back-end. Transformo ideias complexas em aplicações responsivas, escaláveis e de alto desempenho,
+          sempre priorizando a melhor jornada para o usuário final.
+        </div>
 
-      <section
-        id="cta animate section"
-        class="cta-section"
-        aria-labelledby="cta-titulo"
-      >
-        <div class="container">
-          <h2>Vamos Tirar Sua Ideia do Papel?</h2>
-          <p>
-            Se você busca um desenvolvedor comprometido para construir uma
-            aplicação web moderna, um site institucional ou uma landing page de
-            alta conversão, adoraria conversar. Entre em contato e vamos
-            transformar seu projeto em realidade.
-          </p>
-          <div class="cta-contacts">
-            <a
-              href="https://github.com/isaacnasreis"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-button github"
-            >
-              <svg
-                class="banner__redes-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M12 2a10 10 0 0 0-3.16 19.5c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.88 1.52 2.31 1.08 2.88.83.09-.65.35-1.08.63-1.33-2.21-.25-4.54-1.1-4.54-4.9 0-1.08.39-1.96 1.02-2.65-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.01a9.5 9.5 0 0 1 5 0c1.9-1.28 2.75-1 2.75-1 .54 1.38.2 2.4.1 2.65.63.69 1.01 1.57 1.01 2.65 0 3.8-2.34 4.64-4.57 4.88.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"
-                  fill="currentColor"
-                />
-              </svg>
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/isaacnreis/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-button linkedin"
-            >
-              <svg
-                class="banner__redes-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
+        <ul class="banner__redes">
+          <li role="listitem">
+            <a href="https://www.linkedin.com/in/isaacnreis/" target="_blank" rel="noopener noreferrer"
+              class="banner__redes-link" aria-label="LinkedIn">
+              <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path
                   d="M6.94 8.5A1.44 1.44 0 1 1 6.94 5.62A1.44 1.44 0 0 1 6.94 8.5ZM5.7 9.8h2.5V18h-2.5zM10.1 9.8h2.4v1.1h.03c.33-.63 1.16-1.3 2.4-1.3 2.57 0 3.07 1.69 3.07 3.88V18h-2.5v-3.97c0-.95-.02-2.16-1.32-2.16-1.32 0-1.52 1.03-1.52 2.09V18h-2.56V9.8z"
-                  fill="currentColor"
-                />
+                  fill="currentColor" />
               </svg>
-              LinkedIn
             </a>
-            <a
-              href="mailto:isaacreisn@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-button email"
-            >
-              <svg
-                class="banner__redes-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
+          </li>
+          <li role="listitem">
+            <a href="https://github.com/isaacnasreis" target="_blank" rel="noopener noreferrer"
+              class="banner__redes-link" aria-label="GitHub">
+              <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path
-                  d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
-                  fill="currentColor"
-                />
+                  d="M12 2a10 10 0 0 0-3.16 19.5c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.88 1.52 2.31 1.08 2.88.83.09-.65.35-1.08.63-1.33-2.21-.25-4.54-1.1-4.54-4.9 0-1.08.39-1.96 1.02-2.65-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.01a9.5 9.5 0 0 1 5 0c1.9-1.28 2.75-1 2.75-1 .54 1.38.2 2.4.1 2.65.63.69 1.01 1.57 1.01 2.65 0 3.8-2.34 4.64-4.57 4.88.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"
+                  fill="currentColor" />
               </svg>
-              E-mail
             </a>
-          </div>
-        </div>
-      </section>
-    </main>
+          </li>
+          <li role="listitem">
+            <a href="https://x.com/IsaacNreis" target="_blank" rel="noopener noreferrer" class="banner__redes-link"
+              aria-label="X">
+              <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path
+                  d="M18.9 3H21l-6.9 7.9L22 21h-6.2l-4.86-6.35L5.4 21H3.3l7.38-8.44L2 3h6.35l4.4 5.8L18.9 3zm-1.1 16h1.16L7.72 4.9H6.47z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="https://www.behance.net/isaacreis" target="_blank" rel="noopener noreferrer"
+              class="banner__redes-link" aria-label="Behance">
+              <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path
+                  d="M4 6h6.4c2.5 0 3.9 1.35 3.9 3.2 0 1.54-.9 2.4-2.03 2.8 1.47.37 2.55 1.4 2.55 3.2 0 2.28-1.84 3.8-4.53 3.8H4V6zm3 5.2h3.04c.86 0 1.38-.44 1.38-1.17s-.52-1.15-1.38-1.15H7v2.32zm0 5.24h3.24c1.04 0 1.63-.49 1.63-1.34 0-.8-.6-1.3-1.63-1.3H7v2.64zM17.2 8.1h5.3v1.42h-5.3z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="https://www.youtube.com/@isaacnreisdev" target="_blank" rel="noopener noreferrer"
+              class="banner__redes-link" aria-label="YouTube">
+              <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path
+                  d="M21.58 7.19a2.78 2.78 0 0 0-1.96-1.97C17.9 4.75 12 4.75 12 4.75s-5.9 0-7.62.47A2.78 2.78 0 0 0 2.42 7.2C1.96 8.92 1.96 12 1.96 12s0 3.08.46 4.8a2.78 2.78 0 0 0 1.96 1.97c1.72.47 7.62.47 7.62.47s5.9 0 7.62-.47a2.78 2.78 0 0 0 1.96-1.97c.46-1.72.46-4.8.46-4.8s0-3.08-.46-4.8zM9.9 15.03V8.97L15.1 12 9.9 15.03z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="mailto:isaacreisn@gmail.com" class="banner__redes-link" aria-label="E-mail">
+              <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="2" />
+                <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-    <footer class="rodape" id="rodape" role="contentinfo">
-      <div class="rodape-container">
-        <img src="assets/img/logo.png" alt="Logo" class="rodape__logo" />
-        <div style="display: flex; flex-direction: column; gap: 12px">
-          <h4>@ 2026 | Isaac N Reis</h4>
-          <a
-            href="https://www.figma.com/community/file/1318529372146880502"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rodape__linkFigma"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <path
-                d="M10.8333 9.16658L17.6667 2.33325"
-                stroke="#f8f9fa"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M18.3333 5.66675V1.66675H14.3333"
-                stroke="#f8f9fa"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M9.16667 1.66675H7.5C3.33333 1.66675 1.66667 3.33341 1.66667 7.50008V12.5001C1.66667 16.6667 3.33333 18.3334 7.5 18.3334H12.5C16.6667 18.3334 18.3333 16.6667 18.3333 12.5001V10.8334"
-                stroke="#f8f9fa"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            Inspirado no modelo do Figma</a
-          >
+    <section class="skills animate section" id="habilidades" aria-labelledby="habilidades-titulo">
+      <h2 class="skills__titulo" id="habilidades-titulo">
+        Minhas <span class="skills__titulo-fw800">Habilidades</span>
+      </h2>
+      <div class="skills__cards"></div>
+    </section>
+
+    <section class="formacoes" aria-labelledby="formacoes-titulo">
+      <h2 class="formacoes__titulo" id="formacoes-titulo">
+        Minhas <span class="formacoes__titulo-fw800">Formações</span>
+      </h2>
+      <div class="formacoes__container"></div>
+    </section>
+
+    <section class="sobreMim animate section" id="sobreMim" aria-labelledby="sobre-mim-titulo">
+      <div class="sobreMim__imagem">
+        <img src="assets/img/aboutme-boy.svg"
+          alt="Ilustração em preto, branco e cinza de um menino com os braços cruzados com um sorriso confiante no rosto." />
+      </div>
+      <div class="sobreMim-container">
+        <h2 class="sobreMim__titulo" id="sobre-mim-titulo">
+          Sobre <span class="sobreMim__titulo-fw800">Mim</span>
+        </h2>
+        <p>
+          Sou um profissional digital multifacetado, unindo a visão estética do Web Design com o rigor técnico do
+          desenvolvimento Full-Stack. Minha jornada na tecnologia me proporcionou uma compreensão profunda de todo o
+          ciclo de vida de um produto digital.
+        </p>
+        <p>
+          No Front-end, crio interfaces dinâmicas, imersivas e acessíveis utilizando React, Vue.js e JavaScript moderno,
+          garantindo uma performance impecável. No Back-end, construo arquiteturas seguras e escaláveis com Node.js,
+          PHP, C# e integrações de banco de dados, sustentando a lógica de negócio de forma eficiente.
+        </p>
+        <p>
+          Para elevar a qualidade das minhas entregas, estou cursando uma pós-graduação em UX Engineering. Essa
+          especialização me permite transitar perfeitamente entre o Figma e o VS Code, garantindo que a usabilidade e a
+          arquitetura da informação não se percam na tradução para o código.
+        </p>
+        <p>
+          Fora do ambiente de desenvolvimento, busco inspiração na fotografia, na produção de animações e no estudo
+          técnico do cinema, o que aguça meu olhar para detalhes visuais. Também mantenho o foco e a disciplina
+          praticando esportes como basquete e corrida de rua.
+        </p>
+      </div>
+    </section>
+
+    <section class="projetos" id="projetos" aria-labelledby="projetos-titulo">
+      <h2 class="projetos__titulo" id="projetos-titulo">
+        Meus <span class="projetos__titulo-fw800">Projetos</span>
+      </h2>
+      <div class="projetos__container"></div>
+      <button class="projetos__toggle" type="button" aria-expanded="false">
+        Ver mais projetos
+      </button>
+    </section>
+
+    <section class="contato animate section" id="contato" aria-labelledby="contato-titulo">
+      <div class="form__container" role="form" aria-labelledby="contato-titulo">
+        <form action="https://formsubmit.co/ajax/isaacreisn@gmail.com" method="POST" data-form>
+          <input type="hidden" name="_subject" value="Novo Contato do Portfólio!" />
+
+          <input type="text" name="_honey" class="honeypot" />
+
+          <input type="hidden" name="_time" />
+
+          <label for="nome" class="sr-only">Seu nome</label>
+          <input type="text" name="nome" id="nome" placeholder="Seu nome*" aria-describedby="error-nome" required />
+          <span id="error-nome" class="error-message"></span>
+
+          <label for="email" class="sr-only">Seu email</label>
+          <input type="email" name="email" id="email" placeholder="Email*" aria-describedby="error-email" required />
+          <span id="error-email" class="error-message"></span>
+
+          <label for="site" class="sr-only">Seu site</label>
+          <input type="text" name="site" id="site" placeholder="Seu site (Se existir)" />
+
+          <label for="mensagem" class="sr-only">Sua mensagem</label>
+          <textarea name="mensagem" id="mensagem" placeholder="Como posso te ajudar*" aria-describedby="error-mensagem"
+            required></textarea>
+          <span id="error-mensagem" class="error-message"></span>
+          <span style="font-size: 0.875rem; color: #71717a">*Campos obrigatórios</span>
+          <div class="form__submitButton-container">
+            <button class="form__submitButton" type="submit" data-button>
+              Enviar
+            </button>
+            <ul class="banner__redes form__submitButton__redes">
+              <li role="listitem">
+                <a href="https://www.linkedin.com/in/isaacnreis/" target="_blank" rel="noopener noreferrer"
+                  class="banner__redes-link" aria-label="LinkedIn">
+                  <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M6.94 8.5A1.44 1.44 0 1 1 6.94 5.62A1.44 1.44 0 0 1 6.94 8.5ZM5.7 9.8h2.5V18h-2.5zM10.1 9.8h2.4v1.1h.03c.33-.63 1.16-1.3 2.4-1.3 2.57 0 3.07 1.69 3.07 3.88V18h-2.5v-3.97c0-.95-.02-2.16-1.32-2.16-1.32 0-1.52 1.03-1.52 2.09V18h-2.56V9.8z"
+                      fill="currentColor" />
+                  </svg>
+                </a>
+              </li>
+              <li role="listitem">
+                <a href="https://github.com/isaacnasreis" target="_blank" rel="noopener noreferrer"
+                  class="banner__redes-link" aria-label="GitHub">
+                  <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M12 2a10 10 0 0 0-3.16 19.5c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.88 1.52 2.31 1.08 2.88.83.09-.65.35-1.08.63-1.33-2.21-.25-4.54-1.1-4.54-4.9 0-1.08.39-1.96 1.02-2.65-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.01a9.5 9.5 0 0 1 5 0c1.9-1.28 2.75-1 2.75-1 .54 1.38.2 2.4.1 2.65.63.69 1.01 1.57 1.01 2.65 0 3.8-2.34 4.64-4.57 4.88.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"
+                      fill="currentColor" />
+                  </svg>
+                </a>
+              </li>
+              <li role="listitem">
+                <a href="https://x.com/IsaacNreis" target="_blank" rel="noopener noreferrer" class="banner__redes-link"
+                  aria-label="X">
+                  <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M18.9 3H21l-6.9 7.9L22 21h-6.2l-4.86-6.35L5.4 21H3.3l7.38-8.44L2 3h6.35l4.4 5.8L18.9 3zm-1.1 16h1.16L7.72 4.9H6.47z"
+                      fill="currentColor" />
+                  </svg>
+                </a>
+              </li>
+              <li role="listitem">
+                <a href="https://www.behance.net/isaacreis" target="_blank" rel="noopener noreferrer"
+                  class="banner__redes-link" aria-label="Behance">
+                  <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M4 6h6.4c2.5 0 3.9 1.35 3.9 3.2 0 1.54-.9 2.4-2.03 2.8 1.47.37 2.55 1.4 2.55 3.2 0 2.28-1.84 3.8-4.53 3.8H4V6zm3 5.2h3.04c.86 0 1.38-.44 1.38-1.17s-.52-1.15-1.38-1.15H7v2.32zm0 5.24h3.24c1.04 0 1.63-.49 1.63-1.34 0-.8-.6-1.3-1.63-1.3H7v2.64zM17.2 8.1h5.3v1.42h-5.3z"
+                      fill="currentColor" />
+                  </svg>
+                </a>
+              </li>
+              <li role="listitem">
+                <a href="https://www.youtube.com/@isaacnreisdev" target="_blank" rel="noopener noreferrer"
+                  class="banner__redes-link" aria-label="YouTube">
+                  <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M21.58 7.19a2.78 2.78 0 0 0-1.96-1.97C17.9 4.75 12 4.75 12 4.75s-5.9 0-7.62.47A2.78 2.78 0 0 0 2.42 7.2C1.96 8.92 1.96 12 1.96 12s0 3.08.46 4.8a2.78 2.78 0 0 0 1.96 1.97c1.72.47 7.62.47 7.62.47s5.9 0 7.62-.47a2.78 2.78 0 0 0 1.96-1.97c.46-1.72.46-4.8.46-4.8s0-3.08-.46-4.8zM9.9 15.03V8.97L15.1 12 9.9 15.03z"
+                      fill="currentColor" />
+                  </svg>
+                </a>
+              </li>
+              <li role="listitem">
+                <a href="mailto:isaacreisn@gmail.com" class="banner__redes-link" aria-label="E-mail">
+                  <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </form>
+      </div>
+      <div class="contato__info">
+        <div class="contato__info-titulos">
+          <h2 class="contato__info__titulo" id="contato-titulo">
+            Vamos <span class="outlined">conversar</span> sobre
+          </h2>
+          <h2 class="contato__info__titulo">Algumas coisas especiais</h2>
+        </div>
+        <div class="contato__info-descricao">
+          <p>
+            Meu objetivo é ir além do código para criar experiências digitais
+            intuitivas, envolventes e memoráveis, que realmente se conectem
+            com o usuário.
+          </p>
+        </div>
+        <div class="contato__info-meios">
+          <h3>isaacnreis@gmail.com</h3>
+          <h3>+55 (31) 99225-7835</h3>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="assets/js/skills-data.js"></script>
-    <script src="assets/js/educations-data.js"></script>
-    <script src="assets/js/projects-data.js"></script>
-    <script src="assets/js/app.js"></script>
-  </body>
+    <section id="cta animate section" class="cta-section" aria-labelledby="cta-titulo">
+      <div class="container">
+        <h2>Vamos Tirar Sua Ideia do Papel?</h2>
+        <p>
+          Se você busca um desenvolvedor comprometido para construir uma
+          aplicação web moderna, um site institucional ou uma landing page de
+          alta conversão, adoraria conversar. Entre em contato e vamos
+          transformar seu projeto em realidade.
+        </p>
+        <div class="cta-contacts">
+          <a href="https://github.com/isaacnasreis" target="_blank" rel="noopener noreferrer" class="cta-button github">
+            <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                d="M12 2a10 10 0 0 0-3.16 19.5c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.88 1.52 2.31 1.08 2.88.83.09-.65.35-1.08.63-1.33-2.21-.25-4.54-1.1-4.54-4.9 0-1.08.39-1.96 1.02-2.65-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.01a9.5 9.5 0 0 1 5 0c1.9-1.28 2.75-1 2.75-1 .54 1.38.2 2.4.1 2.65.63.69 1.01 1.57 1.01 2.65 0 3.8-2.34 4.64-4.57 4.88.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"
+                fill="currentColor" />
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/isaacnreis/" target="_blank" rel="noopener noreferrer"
+            class="cta-button linkedin">
+            <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                d="M6.94 8.5A1.44 1.44 0 1 1 6.94 5.62A1.44 1.44 0 0 1 6.94 8.5ZM5.7 9.8h2.5V18h-2.5zM10.1 9.8h2.4v1.1h.03c.33-.63 1.16-1.3 2.4-1.3 2.57 0 3.07 1.69 3.07 3.88V18h-2.5v-3.97c0-.95-.02-2.16-1.32-2.16-1.32 0-1.52 1.03-1.52 2.09V18h-2.56V9.8z"
+                fill="currentColor" />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="mailto:isaacreisn@gmail.com" target="_blank" rel="noopener noreferrer" class="cta-button email">
+            <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                fill="currentColor" />
+            </svg>
+            E-mail
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal de Projeto -->
+    <div class="projeto-modal" id="projetoModal" aria-hidden="true">
+      <div class="projeto-modal__backdrop" data-close-modal></div>
+      <div class="projeto-modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <button class="projeto-modal__fechar" data-close-modal aria-label="Fechar modal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="projeto-modal__header">
+          <h2 id="modal-titulo" class="projeto-modal__titulo">Título do Projeto</h2>
+        </div>
+        <div class="projeto-modal__body">
+          <div class="projeto-modal__galeria" id="modalGaleria">
+            <!-- Imagens serão injetadas aqui -->
+          </div>
+          <div class="projeto-modal__info">
+            <div class="projeto-modal__tags" id="modalTags">
+              <!-- Tags serão injetadas aqui -->
+            </div>
+            <p class="projeto-modal__descricao" id="modalDescricao">
+              Descrição completa do projeto.
+            </p>
+            <div class="projeto-modal__links" id="modalLinks">
+              <!-- Links (Demo, Repo, Figma) serão injetados aqui -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape" id="rodape" role="contentinfo">
+    <div class="rodape-container">
+      <img src="assets/img/logo.png" alt="Logo" class="rodape__logo" />
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h4>@ 2026 | Isaac N Reis</h4>
+        <a href="https://www.figma.com/community/file/1318529372146880502" target="_blank" rel="noopener noreferrer"
+          class="rodape__linkFigma"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+            fill="none">
+            <path d="M10.8333 9.16658L17.6667 2.33325" stroke="#f8f9fa" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M18.3333 5.66675V1.66675H14.3333" stroke="#f8f9fa" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M9.16667 1.66675H7.5C3.33333 1.66675 1.66667 3.33341 1.66667 7.50008V12.5001C1.66667 16.6667 3.33333 18.3334 7.5 18.3334H12.5C16.6667 18.3334 18.3333 16.6667 18.3333 12.5001V10.8334"
+              stroke="#f8f9fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Inspirado no modelo do Figma</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/skills-data.js"></script>
+  <script src="assets/js/educations-data.js"></script>
+  <script src="assets/js/projects-data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
 </html>
