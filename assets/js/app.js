@@ -333,6 +333,8 @@ function createProjectElement(project) {
   }
 
   const imageContainer = `<div class="projeto__imagemContainer ${project.imageClass}">
+    <img src="${project.imageSrc}" alt="Screenshot do projeto ${project.title}" 
+         class="projeto__imagem" loading="lazy" decoding="async" />
     <div class="projeto__imagemOverlay">
       <button class="projeto__botao-modal" data-project-title="${project.title}">Ver Detalhes</button>
     </div>
@@ -359,6 +361,8 @@ function createProjectElement(project) {
 }
 
 // Modal Logic
+let lastFocusedElement = null;
+
 function setupModal() {
   const modal = document.getElementById("projetoModal");
   if (!modal) return;
@@ -369,8 +373,29 @@ function setupModal() {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.getAttribute("aria-hidden")) {
+    if (e.key === "Escape" && modal.getAttribute("aria-hidden") !== "true") {
       closeModal();
+    }
+
+    // Focus trap
+    if (e.key === "Tab" && modal.getAttribute("aria-hidden") !== "true") {
+      const focusableElements = modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      const firstEl = focusableElements[0];
+      const lastEl = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          lastEl.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          firstEl.focus();
+          e.preventDefault();
+        }
+      }
     }
   });
 }
@@ -384,6 +409,9 @@ function openModal(project) {
   const modalGaleria = document.getElementById("modalGaleria");
 
   if (!modal) return;
+
+  // Save the element that triggered the modal
+  lastFocusedElement = document.activeElement;
 
   // Populate data
   modalTitulo.textContent = project.title;
@@ -417,12 +445,19 @@ function openModal(project) {
     project.gallery.forEach(imgSrc => {
       const img = document.createElement("img");
       img.src = imgSrc;
-      img.alt = "Imagem do projeto";
+      img.alt = `Screenshot do projeto ${project.title}`;
       img.className = "projeto-modal__imagem";
+      img.loading = "lazy";
+      img.decoding = "async";
       modalGaleria.appendChild(img);
     });
+  } else if (project.imageSrc) {
+    const img = document.createElement("img");
+    img.src = project.imageSrc;
+    img.alt = `Screenshot do projeto ${project.title}`;
+    img.className = "projeto-modal__imagem";
+    modalGaleria.appendChild(img);
   } else {
-    // Se não tiver imagens na galeria, usa a classe de imagem (background) como uma div provisória
     const placeholder = document.createElement("div");
     placeholder.className = `projeto-modal__imagem-placeholder ${project.imageClass}`;
     modalGaleria.appendChild(placeholder);
@@ -431,6 +466,10 @@ function openModal(project) {
   // Open modal
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("no-scroll");
+
+  // Move focus to close button
+  const closeBtn = modal.querySelector(".projeto-modal__fechar");
+  if (closeBtn) closeBtn.focus();
 }
 
 function closeModal() {
@@ -438,6 +477,12 @@ function closeModal() {
   if (!modal) return;
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("no-scroll");
+
+  // Return focus to the element that opened the modal
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
 }
 
 function setupProjectsToggle(projects) {

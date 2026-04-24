@@ -23,6 +23,7 @@
 </head>
 
 <body>
+  <a href="#sobreMim" class="skip-link">Pular para conteúdo principal</a>
   <header class="cabecalho section">
     <img src="assets/img/logo.webp" alt="Logo" class="cabecalho__logo" />
     <nav class="cabecalho__nav" aria-label="Navegação Principal">
@@ -69,14 +70,16 @@
         alt="Ilustração em preto e branco de um menino sentado com um tablet na mão" />
       <div class="banner__textos">
         <div class="banner__titulo">
-          <div style="display: flex" id="banner-titulo">
-            <h1 class="banner__titulo-fw400">Olá eu sou&nbsp;</h1>
-            <h1 class="banner__titulo-fw800">Isaac Reis.</h1>
-          </div>
-          <div style="display: flex">
-            <h1 class="banner__titulo-fw800">Full-Stack&nbsp;</h1>
-            <h1 class="banner__titulo-fw800 outlined">Developer</h1>
-          </div>
+          <h1 id="banner-titulo">
+            <div class="banner__titulo-row">
+              <span class="banner__titulo-fw400">Olá eu sou&nbsp;</span>
+              <span class="banner__titulo-fw800">Isaac Reis.</span>
+            </div>
+            <div class="banner__titulo-row">
+              <span class="banner__titulo-fw800">Full-Stack&nbsp;</span>
+              <span class="banner__titulo-fw800 outlined">Developer</span>
+            </div>
+          </h1>
         </div>
         <div class="banner__descricao">
           Desenvolvedor Full-Stack e Web Designer focado na criação de experiências digitais completas. Minha atuação
@@ -86,7 +89,7 @@
         </div>
 
         <ul class="banner__redes">
-          <li role="listitem">
+          <li>
             <a href="https://www.linkedin.com/in/isaacnreis/" target="_blank" rel="noopener noreferrer"
               class="banner__redes-link" aria-label="LinkedIn">
               <svg class="banner__redes-icon" width="20" height="20" viewBox="0 0 24 24"
@@ -211,7 +214,7 @@
     </section>
 
     <section class="contato animate section" id="contato" aria-labelledby="contato-titulo">
-      <div class="form__container" role="form" aria-labelledby="contato-titulo">
+      <div class="form__container">
         <form action="https://formsubmit.co/ajax/isaacreisn@gmail.com" method="POST" data-form>
           <input type="hidden" name="_subject" value="Novo Contato do Portfólio!" />
 
@@ -234,7 +237,7 @@
           <textarea name="mensagem" id="mensagem" placeholder="Como posso te ajudar*" aria-describedby="error-mensagem"
             required></textarea>
           <span id="error-mensagem" class="error-message"></span>
-          <span style="font-size: 0.875rem; color: #71717a">*Campos obrigatórios</span>
+          <span class="form__campos-obrigatorios">*Campos obrigatórios</span>
           <div class="form__submitButton-container">
             <button class="form__submitButton" type="submit" data-button>
               Enviar
@@ -323,15 +326,15 @@
           </p>
         </div>
         <div class="contato__info-meios">
-          <h3>isaacnreis@gmail.com</h3>
+          <h3>isaacreisn@gmail.com</h3>
           <h3>+55 (31) 99225-7835</h3>
         </div>
       </div>
     </section>
 
-    <section id="cta animate section" class="cta-section" aria-labelledby="cta-titulo">
+    <section id="cta" class="cta-section animate section" aria-labelledby="cta-titulo">
       <div class="container">
-        <h2>Vamos Tirar Sua Ideia do Papel?</h2>
+        <h2 id="cta-titulo">Vamos Tirar Sua Ideia do Papel?</h2>
         <p>
           Se você busca um desenvolvedor comprometido para construir uma
           aplicação web moderna, um site institucional ou uma landing page de
@@ -408,8 +411,8 @@
   <footer class="rodape" id="rodape" role="contentinfo">
     <div class="rodape-container">
       <img src="assets/img/logo.webp" alt="Logo" class="rodape__logo" />
-      <div style="display: flex; flex-direction: column; gap: 12px">
-        <h4>@ 2026 | Isaac N Reis</h4>
+      <div class="rodape__info">
+        <h4>&copy; 2026 | Isaac N Reis</h4>
         <a href="https://www.figma.com/community/file/1318529372146880502" target="_blank" rel="noopener noreferrer"
           class="rodape__linkFigma"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
             fill="none">
@@ -426,10 +429,10 @@
     </div>
   </footer>
 
-  <script src="assets/js/skills-data.js"></script>
-  <script src="assets/js/educations-data.js"></script>
-  <script src="assets/js/projects-data.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/skills-data.js" defer></script>
+  <script src="assets/js/educations-data.js" defer></script>
+  <script src="assets/js/projects-data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 </body>
 
 </html>

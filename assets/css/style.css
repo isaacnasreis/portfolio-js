@@ -3,7 +3,7 @@
   --bg-dark: #212529;
   --text-light: #f8f9fa;
   --text-dark: #212529;
-  --text-muted-dark: #71717a;
+  --text-muted-dark: #52525b;
   --text-muted-light: #d4d4d8;
   --border-dark: #212529;
   --border-light: #f8f9fa;
@@ -37,6 +37,29 @@ body {
 
 :target {
   scroll-margin-top: 0.8em;
+}
+
+:focus-visible {
+  outline: 3px solid #4A90D9;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 .section {
@@ -169,6 +192,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 1.25rem;
+}
+
+.banner__titulo-row {
+  display: flex;
 }
 
 .banner__titulo .banner__titulo-fw400 {
@@ -324,7 +351,7 @@ body .principal .outlined {
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem;
-  letter-spacing: -0.025;
+  letter-spacing: -0.025rem;
   text-transform: capitalize;
 }
 
@@ -384,7 +411,7 @@ body .principal .outlined {
 }
 
 .formacoes .formacao {
-  cursor: crosshair;
+  cursor: default;
   display: flex;
   padding: 1.875rem 1.5rem;
   flex-direction: column;
@@ -584,9 +611,7 @@ body .principal .outlined {
 
 .projeto .projeto__imagemContainer {
   border-radius: 18.761px;
-  background:
-    url("../img/image\ 770.webp"),
-    lightgray 50% / cover no-repeat;
+  background: #2a2f34;
   box-shadow:
     0px 12px 42px -4px rgba(24, 39, 75, 0.12),
     0px 8px 18px -6px rgba(24, 39, 75, 0.12);
@@ -594,76 +619,53 @@ body .principal .outlined {
   width: 100%;
   height: 260px;
   flex-shrink: 0;
-  cursor: crosshair;
+  cursor: pointer;
 
   transition: transform 0.4s ease-in-out;
 }
 
-.projeto .projeto__imagemContainer.projeto-encoderDecoder {
-  background: url("../img/projeto-encoderDecoder.webp") no-repeat center / cover;
+.projeto__imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18.761px;
+  display: block;
 }
 
-.projeto .projeto__imagemContainer.projeto-orcamentoPessoal {
-  background: url("../img/projeto-orcamentoPessoal.webp") no-repeat center / cover;
-}
-
-.projeto .projeto__imagemContainer.projeto-pokedex {
-  background: url("../img/projeto-pokedex.webp") no-repeat center / cover;
-}
-
-.projeto .projeto__imagemContainer.projeto-jogoDaVelha {
-  background: url("../img/projeto-jogoDaVelha.webp") no-repeat center / cover;
-}
-
-.projeto .projeto__imagemContainer.projeto-cineScope {
-  background: url("../img/projeto-cineScope.webp") no-repeat center / cover;
-}
-
-.projeto .projeto__imagemContainer.projeto-reactStore {
-  background: url("../img/projeto-reactStore.webp") no-repeat center / cover;
-}
-
-.projeto .projeto__imagemContainer.projeto-studioGhibli {
-  background:
-    linear-gradient(rgba(19, 28, 44, 0.35), rgba(19, 28, 44, 0.35)),
-    url("../img/projeto-studio-ghibli.webp") no-repeat center / cover;
-}
-
-.projeto .projeto__imagemContainer.projeto-vortexAdmin {
-  background: url("../img/projeto-vortexAdmin.webp") no-repeat center / cover;
-}
-
-.projeto .projeto__imagemContainer.projeto-doIt {
-  background: url("../img/projeto-doIt.webp") no-repeat center / cover;
+.projeto .projeto__imagemContainer.projeto-studioGhibli .projeto__imagem {
+  filter: brightness(0.65);
 }
 
 .projeto .projeto__imagemContainer.projeto-git {
-  background: url("../img/github-mark-white.svg") no-repeat center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2a2f34;
+}
+
+.projeto .projeto__imagemContainer.projeto-git .projeto__imagem {
+  width: 40%;
+  height: 40%;
+  object-fit: contain;
 }
 
 .projeto .projeto__imagemContainer:hover {
-  animation: pulse 2.2s infinite ease-in-out;
+  animation: pulse 1.5s ease-in-out 1;
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
-    position: relative;
-    bottom: 0;
+    transform: scale(1) translateY(0);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
   }
 
-  60% {
-    transform: scale(1.04);
-    position: relative;
-    bottom: 1rem;
+  50% {
+    transform: scale(1.03) translateY(-0.5rem);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
   }
 
   100% {
-    transform: scale(1);
-    position: relative;
-    bottom: 0;
+    transform: scale(1) translateY(0);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
@@ -810,6 +812,11 @@ body .principal .outlined {
   letter-spacing: -0.32px;
 }
 
+.form__campos-obrigatorios {
+  font-size: 0.875rem;
+  color: var(--text-muted-dark);
+}
+
 .form__container .form__submitButton {
   border-radius: 4px;
   border: 2px solid var(--border-light);
@@ -921,6 +928,7 @@ body .principal .outlined {
   background-color: var(--bg-dark);
   padding: 60px 20px;
   text-align: center;
+  max-width: 100%;
 }
 
 .cta-section h2 {
@@ -1000,6 +1008,12 @@ body .principal .outlined {
 .rodape .rodape__logo {
   filter: invert();
   height: 3.5rem;
+}
+
+.rodape__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .rodape .rodape__linkFigma,
@@ -1086,24 +1100,25 @@ body .principal .outlined {
   font-weight: 500;
 }
 
-.projeto__link {
-  color: var(--text-muted-light) !important;
+.projetos .projeto__link,
+.projeto-modal__links .projeto__link {
+  color: var(--text-muted-light);
 }
 
-.figma-link {
-  color: #ff7262 !important;
+.projetos .figma-link {
+  color: #ff7262;
 }
 
-.figma-link svg path {
-  stroke: #ff7262 !important;
+.projetos .figma-link svg path {
+  stroke: #ff7262;
 }
 
-.figma-link:hover {
-  color: #f24e1e !important;
+.projetos .figma-link:hover {
+  color: #f24e1e;
 }
 
-.figma-link:hover svg path {
-  stroke: #f24e1e !important;
+.projetos .figma-link:hover svg path {
+  stroke: #f24e1e;
 }
 
 .projeto__imagemOverlay {
@@ -1258,8 +1273,8 @@ body .principal .outlined {
   width: 100%;
   height: 350px;
   border-radius: 8px;
-  background-position: center !important;
-  background-size: cover !important;
+  background-position: center;
+  background-size: cover;
 }
 
 .projeto-modal__info {
