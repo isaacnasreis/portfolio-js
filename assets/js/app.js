@@ -1,3 +1,33 @@
+// === SCROLL PROGRESS BAR ===
+function setupScrollProgress() {
+  const bar = document.getElementById('scrollProgressBar');
+  if (!bar) return;
+  const update = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = progress + '%';
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+// === RIPPLE EFFECT ===
+function addRipple(button) {
+  button.classList.add('ripple-btn');
+  button.addEventListener('click', function (e) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+    this.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
+  });
+}
+
 function setupMobileMenu() {
   const menuToggle = document.querySelector(".cabecalho__menu-toggle");
   const menuNav = document.querySelector(".cabecalho__menu-mobile--nav");
@@ -209,27 +239,35 @@ class FormSubmit {
   }
 }
 
+// === STAGGER + FLIP ANIMATION SYSTEM ===
 function setupScrollAnimation() {
-  const animatedElements = document.querySelectorAll(".animate");
+  const selector = '.animate, .animate-flip';
+  const animatedElements = document.querySelectorAll(selector);
   if (animatedElements.length === 0) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("active");
+          entry.target.classList.add('active');
         } else {
-          entry.target.classList.remove("active");
+          entry.target.classList.remove('active');
         }
       });
     },
-    {
-      threshold: 0.1,
-    },
+    { threshold: 0.08 }
   );
 
   animatedElements.forEach((element) => {
     observer.observe(element);
+  });
+}
+
+// Apply stagger delays to a list of elements
+function applyStaggerDelays(elements, maxDelay = 6) {
+  elements.forEach((el, i) => {
+    const delayClass = `animate-delay-${Math.min(i + 1, maxDelay)}`;
+    el.classList.add('animate-flip', delayClass);
   });
 }
 
@@ -297,19 +335,28 @@ const figmaSVG = `
 `;
 
 function createProjectElement(project) {
-  const projectArticle = document.createElement("article");
-  projectArticle.className = "projeto animate";
+  const projectArticle = document.createElement('article');
+  projectArticle.className = 'projeto animate-flip';
 
-  let linksHtml = "";
+  if (project.featured) {
+    projectArticle.classList.add('projeto--featured');
+  }
+
+  let categoryBadge = '';
+  if (project.category) {
+    categoryBadge = `<span class="projeto__category-badge">${project.category}</span>`;
+  }
+
+  let linksHtml = '';
   if (project.customLinks) {
     linksHtml = project.customLinks
       .map(
-        (link) => `
-      <a class="projeto__link" href="${link.url}" target="_blank" rel="noopener noreferrer">
+        (link) =>
+          `<a class="projeto__link" href="${link.url}" target="_blank" rel="noopener noreferrer">
         ${linkSVG} ${link.text}
       </a>`,
       )
-      .join("");
+      .join('');
   } else {
     linksHtml = `
       <a class="projeto__link" href="${project.demoUrl}" target="_blank" rel="noopener noreferrer">
@@ -318,7 +365,7 @@ function createProjectElement(project) {
       <a class="projeto__link" href="${project.repoUrl}" target="_blank" rel="noopener noreferrer">
         ${linkSVG} Repositório
       </a>`;
-      
+
     if (project.figmaUrl) {
       linksHtml += `
         <a class="projeto__link figma-link" href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer">
@@ -327,9 +374,9 @@ function createProjectElement(project) {
     }
   }
 
-  let tagsHtml = "";
+  let tagsHtml = '';
   if (project.tags && project.tags.length > 0) {
-    tagsHtml = `<div class="projeto__tags">${project.tags.map(tag => `<span class="projeto__tag">${tag}</span>`).join("")}</div>`;
+    tagsHtml = `<div class="projeto__tags">${project.tags.map(tag => `<span class="projeto__tag">${tag}</span>`).join('')}</div>`;
   }
 
   const imageContainer = `<div class="projeto__imagemContainer ${project.imageClass}">
@@ -339,9 +386,10 @@ function createProjectElement(project) {
       <button class="projeto__botao-modal" data-project-title="${project.title}">Ver Detalhes</button>
     </div>
   </div>`;
-  
+
   const textContainer = `
     <div class="projeto__textoContainer">
+      ${categoryBadge}
       <h3 class="projeto__titulo">${project.title}</h3>
       ${tagsHtml}
       <p class="projeto__descricao">${project.description}</p>
@@ -351,9 +399,9 @@ function createProjectElement(project) {
 
   projectArticle.innerHTML = imageContainer + textContainer;
 
-  // Add event listener to the button inside image overlay
+  // Modal button
   const modalButton = projectArticle.querySelector('.projeto__botao-modal');
-  if(modalButton) {
+  if (modalButton) {
     modalButton.addEventListener('click', () => openModal(project));
   }
 
@@ -486,39 +534,62 @@ function closeModal() {
 }
 
 function setupProjectsToggle(projects) {
-  const container = document.querySelector(".projetos__container");
-  const toggleButton = document.querySelector(".projetos__toggle");
+  const container = document.querySelector('.projetos__container');
+  const toggleButton = document.querySelector('.projetos__toggle');
   if (!container || !toggleButton || !Array.isArray(projects)) return;
 
-  const initialVisibleProjects = 6;
+  const initialVisibleProjects = 5;
   let isExpanded = false;
+  let activeFilter = 'all';
+
+  const getFilteredProjects = () =>
+    activeFilter === 'all'
+      ? projects
+      : projects.filter(p => p.category === activeFilter);
 
   const renderProjects = () => {
-    const projectsToRender = isExpanded
-      ? projects
-      : projects.slice(0, initialVisibleProjects);
+    const filtered = getFilteredProjects();
+    const projectsToRender = isExpanded ? filtered : filtered.slice(0, initialVisibleProjects);
 
-    container.innerHTML = "";
+    container.innerHTML = '';
     const fragment = document.createDocumentFragment();
-    projectsToRender.forEach((project) => {
-      fragment.appendChild(createProjectElement(project));
+    projectsToRender.forEach((project, index) => {
+      const el = createProjectElement(project);
+      // Apply stagger delay
+      const delay = Math.min(index + 1, 6);
+      el.classList.add(`animate-delay-${delay}`);
+      fragment.appendChild(el);
     });
     container.appendChild(fragment);
 
-    toggleButton.textContent = isExpanded
-      ? "Ver menos projetos"
-      : "Ver mais projetos";
-    toggleButton.setAttribute("aria-expanded", String(isExpanded));
+    toggleButton.textContent = isExpanded ? 'Ver menos projetos' : 'Ver mais projetos';
+    toggleButton.setAttribute('aria-expanded', String(isExpanded));
+
+    const hasMore = getFilteredProjects().length > initialVisibleProjects;
+    toggleButton.hidden = !hasMore || isExpanded === false && getFilteredProjects().length <= initialVisibleProjects;
+    if (getFilteredProjects().length <= initialVisibleProjects) toggleButton.hidden = true;
+
+    setupScrollAnimation();
   };
 
-  if (projects.length <= initialVisibleProjects) {
-    toggleButton.hidden = true;
-  }
-
-  toggleButton.addEventListener("click", () => {
+  toggleButton.addEventListener('click', () => {
     isExpanded = !isExpanded;
     renderProjects();
-    setupScrollAnimation();
+  });
+
+  addRipple(toggleButton);
+
+  // === CATEGORY FILTER ===
+  const filterButtons = document.querySelectorAll('.projetos__filtro');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      activeFilter = btn.dataset.filter;
+      isExpanded = false;
+      renderProjects();
+    });
   });
 
   renderProjects();
@@ -543,32 +614,45 @@ function renderContent({ containerSelector, data, renderItem, errorMsg }) {
   container.appendChild(fragment);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
+  setupScrollProgress();
   setupMobileMenu();
 
   renderContent({
-    containerSelector: ".skills__cards",
+    containerSelector: '.skills__cards',
     data: skillsData,
     renderItem: createSkillElement,
-    errorMsg:
-      "Container de habilidades ou dados das habilidades não encontrados.",
+    errorMsg: 'Container de habilidades ou dados das habilidades não encontrados.',
+  });
+
+  // Apply stagger delays to skill cards
+  const skillCards = document.querySelectorAll('.skills__card');
+  skillCards.forEach((card, i) => {
+    const delay = Math.min(i + 1, 6);
+    card.classList.add('animate-flip', `animate-delay-${delay}`);
   });
 
   renderContent({
-    containerSelector: ".formacoes__container",
+    containerSelector: '.formacoes__container',
     data: educationsData,
     renderItem: createEducationElement,
-    errorMsg: "Container de formações ou dados das formações não encontrados.",
+    errorMsg: 'Container de formações ou dados das formações não encontrados.',
   });
 
   setupProjectsToggle(projectsData);
   setupModal();
-
   setupScrollAnimation();
 
+  // Ripple on primary buttons
+  document.querySelectorAll('.cabecalho__botao-container, .cta-button, .form__submitButton, .projetos__toggle').forEach(addRipple);
+
+  // Gradient title on hero — apply to 'Isaac Reis.' (bold, no outline conflict)
+  const heroIsaac = document.querySelector('.banner__titulo-row:first-child .banner__titulo-fw800');
+  if (heroIsaac) heroIsaac.classList.add('gradient-title');
+
   const formSubmit = new FormSubmit({
-    form: "[data-form]",
-    button: "[data-button]",
+    form: '[data-form]',
+    button: '[data-button]',
     success:
       "<h1 class='success'>Mensagem enviada!</h1><p>Obrigado pelo seu contato. Retornarei em breve.</p>",
     error:
@@ -576,3 +660,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   formSubmit.init();
 });
+

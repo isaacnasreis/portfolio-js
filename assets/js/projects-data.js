@@ -9,6 +9,8 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/react-store",
     figmaUrl: "",
     tags: ["React", "Stripe API", "E-commerce", "UX/UI"],
+    category: "Full-Stack",
+    featured: true,
     gallery: []
   },
   {
@@ -21,6 +23,8 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/cineScope",
     figmaUrl: "",
     tags: ["React", "TMDB API", "Local Storage", "Design System"],
+    category: "Frontend",
+    featured: false,
     gallery: []
   },
   {
@@ -33,6 +37,8 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/studio-ghibli",
     figmaUrl: "https://www.figma.com/design/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---CodeLab?node-id=5854-2",
     tags: ["React 19", "TypeScript", "Vite", "CSS Modules", "UI Design"],
+    category: "UI/UX",
+    featured: false,
     gallery: []
   },
   {
@@ -45,6 +51,8 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/doIt",
     figmaUrl: "",
     tags: ["Nuxt.js", "Node.js", "JWT", "Full-Stack", "Productivity"],
+    category: "Full-Stack",
+    featured: false,
     gallery: []
   },
   {
@@ -57,11 +65,13 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/vortexadmin",
     figmaUrl: "",
     tags: ["Vue 3", "TypeScript", "Dashboard", "Data Viz"],
+    category: "Frontend",
+    featured: false,
     gallery: []
   },
   {
     title: "Codificador de Texto",
-    description: "Ferramenta para codificar e decodificar textos em tempo real, focada em manipulação direta do DOM.",
+    description: "Ferramenta para codificar e decodificar textos em tempo real, focada em manipulação direta do DOM e lógica de algoritmos.",
     fullDescription: "Um excelente exercício de lógica de programação e algoritmos de criptografia básica. O Codificador de Texto foi construído inteiramente com Vanilla JavaScript. O desafio principal foi implementar uma manipulação de DOM impecável, garantindo que as transformações de texto acontecessem em tempo real sem travamentos, além de permitir o uso prático de copiar/colar de forma intuitiva na interface.",
     imageClass: "projeto-encoderDecoder",
     imageSrc: "assets/img/projeto-encoderDecoder.webp",
@@ -69,42 +79,8 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/alura-challenge-one",
     figmaUrl: "",
     tags: ["JavaScript", "Lógica", "DOM", "CSS"],
-    gallery: []
-  },
-  {
-    title: "Controle de Orçamento",
-    description: "Aplicação para controle de despesas com validação de formulários e persistência de dados via Local Storage.",
-    fullDescription: "Uma aplicação utilitária pensada para o dia a dia. O Controle de Orçamento permite ao usuário registrar, categorizar e listar suas despesas financeiras. O ponto forte do projeto é a validação rigorosa de formulários e a persistência de dados localmente (Local Storage). A UI limpa guia o usuário a inserir os dados corretamente, prevenindo erros comuns.",
-    imageClass: "projeto-orcamentoPessoal",
-    imageSrc: "assets/img/projeto-orcamentoPessoal.webp",
-    demoUrl: "https://isaacnreis.github.io/orcamento-pessoal/",
-    repoUrl: "https://github.com/isaacnasreis/orcamento-pessoal",
-    figmaUrl: "",
-    tags: ["JavaScript", "Local Storage", "Formulários", "UX"],
-    gallery: []
-  },
-  {
-    title: "Pokedex API",
-    description: "Pokedex interativa que consome a PokeAPI para exibir dados dinâmicos, destacando habilidades de requisições assíncronas.",
-    fullDescription: "Integrando a famosa PokeAPI, este projeto é uma demonstração clara de habilidades com requisições assíncronas (Fetch API / Axios) e tratamento de promessas. Os dados recebidos são estruturados dinamicamente em cards visuais que mudam de cor conforme o tipo do Pokémon. A paginação em tempo real e o carregamento otimizado proporcionam uma experiência fluida mesmo ao processar centenas de itens.",
-    imageClass: "projeto-pokedex",
-    imageSrc: "assets/img/projeto-pokedex.webp",
-    demoUrl: "https://js-developer-pokedex-isaacnreis.vercel.app/",
-    repoUrl: "https://github.com/isaacnasreis/js-developer-pokedex",
-    figmaUrl: "",
-    tags: ["JavaScript", "PokeAPI", "Assincronismo", "Dynamic UI"],
-    gallery: []
-  },
-  {
-    title: "Jogo da Velha",
-    description: "Implementação do clássico Jogo da Velha com JavaScript puro, destacando o gerenciamento de estados no front-end.",
-    fullDescription: "O clássico Jogo da Velha refeito para demonstrar o controle de estados e lógica condicional avançada em JavaScript. A aplicação rastreia o histórico de jogadas, determina instantaneamente o estado de vitória, derrota ou empate, e permite reiniciar a partida sem recarregar a página. O design é minimalista, focado na jogabilidade.",
-    imageClass: "projeto-jogoDaVelha",
-    imageSrc: "assets/img/projeto-jogoDaVelha.webp",
-    demoUrl: "https://isaacnreis.github.io/jogodavelha/",
-    repoUrl: "https://github.com/isaacnasreis/jogodavelha",
-    figmaUrl: "",
-    tags: ["JavaScript", "Game Logic", "CSS Grid", "Interatividade"],
+    category: "Frontend",
+    featured: false,
     gallery: []
   },
   {
@@ -122,6 +98,8 @@ const projectsData = [
     ],
     figmaUrl: "",
     tags: ["Open Source", "Contínuo", "Versionamento"],
+    category: "Full-Stack",
+    featured: false,
     gallery: []
   },
 ];
