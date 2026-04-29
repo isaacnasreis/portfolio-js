@@ -284,8 +284,7 @@ function createSkillElement(skill) {
 
   skillCard.innerHTML = `
     ${normalizedSvg}
-    <h3 class="skills__cardTitulo" style="${skill.customTitleStyle || ""}">${
-      skill.title
+    <h3 class="skills__cardTitulo" style="${skill.customTitleStyle || ""}">${skill.title
     }</h3>
   `;
 
@@ -343,8 +342,9 @@ function createProjectElement(project) {
   }
 
   let categoryBadge = '';
-  if (project.category) {
-    categoryBadge = `<span class="projeto__category-badge">${project.category}</span>`;
+  if (project.category && project.category.length > 0) {
+    const categories = Array.isArray(project.category) ? project.category : [project.category];
+    categoryBadge = categories.map(cat => `<span class="projeto__category-badge">${cat}</span>`).join('');
   }
 
   let linksHtml = '';
@@ -389,7 +389,7 @@ function createProjectElement(project) {
 
   const textContainer = `
     <div class="projeto__textoContainer">
-      ${categoryBadge}
+      <div class="projeto__header">${categoryBadge}</div>
       <h3 class="projeto__titulo">${project.title}</h3>
       ${tagsHtml}
       <p class="projeto__descricao">${project.description}</p>
@@ -415,7 +415,7 @@ function setupModal() {
   const modal = document.getElementById("projetoModal");
   if (!modal) return;
   const closeButtons = modal.querySelectorAll("[data-close-modal]");
-  
+
   closeButtons.forEach(btn => {
     btn.addEventListener("click", closeModal);
   });
@@ -464,7 +464,7 @@ function openModal(project) {
   // Populate data
   modalTitulo.textContent = project.title;
   modalDescricao.innerHTML = project.fullDescription || project.description;
-  
+
   // Tags
   if (project.tags) {
     modalTags.innerHTML = project.tags.map(tag => `<span class="projeto__tag">${tag}</span>`).join("");
@@ -545,7 +545,10 @@ function setupProjectsToggle(projects) {
   const getFilteredProjects = () =>
     activeFilter === 'all'
       ? projects
-      : projects.filter(p => p.category === activeFilter);
+      : projects.filter(p => {
+        const cats = Array.isArray(p.category) ? p.category : [p.category];
+        return cats.includes(activeFilter);
+      });
 
   const renderProjects = () => {
     const filtered = getFilteredProjects();

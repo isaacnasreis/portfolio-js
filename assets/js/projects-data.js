@@ -1,5 +1,19 @@
 const projectsData = [
   {
+    title: "Santo Solar - Site Institucional em Produção",
+    description: "Site institucional de empresa de energia solar, em produção, desenvolvido com Astro e React. Evoluiu de HTML/CSS puro para uma arquitetura moderna e performática.",
+    fullDescription: "O Santo Solar é um projeto real e em produção para a empresa de energia solar da minha irmã. A primeira versão foi desenvolvida com HTML e CSS puro, seguindo um design profissional criado no Figma. Com o objetivo de evoluir a arquitetura, o site foi completamente refatorado utilizando Astro e React, com foco em performance, SEO e escalabilidade. O Astro permite renderização estática (SSG) ideal para um site institucional de alta performance, enquanto os React Islands garantem interatividade onde necessário. O resultado é um site limpo, rápido e com excelente pontuação no Lighthouse.",
+    imageClass: "projeto-santoSolar",
+    imageSrc: "assets/img/projeto-santoSolar.webp",
+    demoUrl: "https://santosolar.com.br/",
+    repoUrl: "https://github.com/isaacnasreis/sl-home",
+    figmaUrl: "https://www.figma.com/design/sCxRL5H3e1Kztu4BNhIvkF/Web-Page-Solar-Energy?node-id=0-1&t=IKyB7HIUBDyKyvm5-1",
+    tags: ["Astro", "React", "TypeScript", "SEO", "Produção", "Web Design"],
+    category: ["Full-Stack", "UI/UX"],
+    featured: true,
+    gallery: []
+  },
+  {
     title: "ReactStore - E-commerce com Integração de Pagamentos",
     description: "Simulação de e-commerce funcional com integração de pagamentos via Stripe. Demonstra a construção de uma experiência de compra completa e responsiva.",
     fullDescription: "O ReactStore é uma simulação robusta de um e-commerce moderno. O foco principal deste projeto foi desenvolver uma arquitetura escalável utilizando React, garantindo um gerenciamento de estado eficiente. A integração com a API do Stripe permite um fluxo de checkout realista e seguro. A interface foi cuidadosamente projetada para oferecer a melhor experiência ao usuário (UX), com transições suaves e design totalmente responsivo.",
@@ -9,8 +23,8 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/react-store",
     figmaUrl: "",
     tags: ["React", "Stripe API", "E-commerce", "UX/UI"],
-    category: "Full-Stack",
-    featured: true,
+    category: ["Full-Stack", "Frontend"],
+    featured: false,
     gallery: []
   },
   {
@@ -23,7 +37,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/cineScope",
     figmaUrl: "",
     tags: ["React", "TMDB API", "Local Storage", "Design System"],
-    category: "Frontend",
+    category: ["Frontend"],
     featured: false,
     gallery: []
   },
@@ -37,7 +51,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/studio-ghibli",
     figmaUrl: "https://www.figma.com/design/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---CodeLab?node-id=5854-2",
     tags: ["React 19", "TypeScript", "Vite", "CSS Modules", "UI Design"],
-    category: "UI/UX",
+    category: ["Frontend", "UI/UX"],
     featured: false,
     gallery: []
   },
@@ -51,7 +65,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/doIt",
     figmaUrl: "",
     tags: ["Nuxt.js", "Node.js", "JWT", "Full-Stack", "Productivity"],
-    category: "Full-Stack",
+    category: ["Full-Stack"],
     featured: false,
     gallery: []
   },
@@ -65,7 +79,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/vortexadmin",
     figmaUrl: "",
     tags: ["Vue 3", "TypeScript", "Dashboard", "Data Viz"],
-    category: "Frontend",
+    category: ["Frontend"],
     featured: false,
     gallery: []
   },
@@ -79,7 +93,7 @@ const projectsData = [
     repoUrl: "https://github.com/isaacnasreis/alura-challenge-one",
     figmaUrl: "",
     tags: ["JavaScript", "Lógica", "DOM", "CSS"],
-    category: "Frontend",
+    category: ["Frontend"],
     featured: false,
     gallery: []
   },
@@ -98,7 +112,7 @@ const projectsData = [
     ],
     figmaUrl: "",
     tags: ["Open Source", "Contínuo", "Versionamento"],
-    category: "Full-Stack",
+    category: ["Full-Stack"],
     featured: false,
     gallery: []
   },
