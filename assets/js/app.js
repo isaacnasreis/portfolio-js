@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ripple on primary buttons
   document.querySelectorAll('.cabecalho__botao-container, .cta-button, .form__submitButton, .projetos__toggle').forEach(addRipple);
 
-  // Gradient title on hero — apply to 'Isaac Reis.' (bold, no outline conflict)
+  // Gradient title on hero — apply to 'Isaac N Reis.' (bold, no outline conflict)
   const heroIsaac = document.querySelector('.banner__titulo-row:first-child .banner__titulo-fw800');
   if (heroIsaac) heroIsaac.classList.add('gradient-title');
 
