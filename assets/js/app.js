@@ -549,6 +549,106 @@ function closeModal() {
   }
 }
 
+function setupCertificadosModal() {
+  const modal = document.getElementById("certificadoModal");
+  const btnAbrir = document.getElementById("btn-certificados");
+  if (!modal || !btnAbrir) return;
+
+  const closeButtons = modal.querySelectorAll("[data-close-certificado-modal]");
+  
+  const toggleCertificadoModal = (open) => {
+    if (open) {
+      lastFocusedElement = document.activeElement;
+      renderCertificados();
+      modal.setAttribute("aria-hidden", "false");
+      btnAbrir.setAttribute("aria-expanded", "true");
+      document.body.classList.add("no-scroll");
+      const closeBtn = modal.querySelector(".certificado-modal__fechar");
+      if (closeBtn) closeBtn.focus();
+    } else {
+      modal.setAttribute("aria-hidden", "true");
+      btnAbrir.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("no-scroll");
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
+    }
+  };
+
+  btnAbrir.addEventListener("click", () => toggleCertificadoModal(true));
+  
+  closeButtons.forEach(btn => {
+    btn.addEventListener("click", () => toggleCertificadoModal(false));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.getAttribute("aria-hidden") !== "true") {
+      toggleCertificadoModal(false);
+    }
+    
+    // Focus trap for certificado modal
+    if (e.key === "Tab" && modal.getAttribute("aria-hidden") !== "true") {
+      const focusableElements = modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusableElements.length === 0) return;
+      const firstEl = focusableElements[0];
+      const lastEl = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          lastEl.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          firstEl.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+}
+
+function renderCertificados() {
+  const container = document.getElementById("certificadosLista");
+  if (!container || typeof certificadosData === "undefined") return;
+  
+  if (container.children.length > 0) return; // Já renderizado
+
+  const fragment = document.createDocumentFragment();
+  
+  certificadosData.forEach((cert, index) => {
+    const el = document.createElement("div");
+    el.className = "certificado-card";
+    
+    // Animação stagger no modal
+    const delay = Math.min(index + 1, 10);
+    el.style.animationDelay = `${delay * 0.05}s`;
+    
+    let credIdHtml = '';
+    if (cert.credentialId) {
+      credIdHtml = `<p class="certificado-card__cred">ID: ${cert.credentialId}</p>`;
+    }
+    
+    el.innerHTML = `
+      <div class="certificado-card__icon ${cert.icon}">
+        ${cert.icon === 'alura' || cert.icon === 'senai' ? '' : cert.company.charAt(0)}
+      </div>
+      <div class="certificado-card__content">
+        <h3 class="certificado-card__titulo">${cert.title}</h3>
+        <p class="certificado-card__empresa">${cert.company} &bull; ${cert.date}</p>
+        ${credIdHtml}
+        <p class="certificado-card__skills"><strong>Competências:</strong> ${cert.skills}</p>
+      </div>
+    `;
+    fragment.appendChild(el);
+  });
+  
+  container.appendChild(fragment);
+}
+
 function setupProjectsToggle(projects) {
   const container = document.querySelector('.projetos__container');
   const toggleButton = document.querySelector('.projetos__toggle');
@@ -660,10 +760,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupProjectsToggle(projectsData);
   setupModal();
+  setupCertificadosModal();
   setupScrollAnimation();
 
   // Ripple on primary buttons
-  document.querySelectorAll('.cabecalho__botao-container, .cta-button, .form__submitButton, .projetos__toggle').forEach(addRipple);
+  document.querySelectorAll('.cabecalho__botao-container, .cta-button, .form__submitButton, .projetos__toggle, .certificados__botao').forEach(addRipple);
 
   // Gradient title on hero — apply to 'Isaac N Reis.' (bold, no outline conflict)
   const heroIsaac = document.querySelector('.banner__titulo-row:first-child .banner__titulo-fw800');

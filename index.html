@@ -215,6 +215,17 @@
         Minhas <span class="formacoes__titulo-fw800">Formações</span>
       </h2>
       <div class="formacoes__container"></div>
+      <div class="certificados__botao-container">
+        <button class="certificados__botao ripple-btn" id="btn-certificados" aria-haspopup="dialog"
+          aria-expanded="false">
+          Ver Licenças e Certificados
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f8f9fa" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+        </button>
+      </div>
     </section>
 
     <section class="contato animate section" id="contato" aria-labelledby="contato-titulo">
@@ -400,6 +411,29 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal de Certificados -->
+    <div class="certificado-modal" id="certificadoModal" aria-hidden="true">
+      <div class="certificado-modal__backdrop" data-close-certificado-modal></div>
+      <div class="certificado-modal__content" role="dialog" aria-modal="true"
+        aria-labelledby="certificado-modal-titulo">
+        <button class="certificado-modal__fechar" data-close-certificado-modal aria-label="Fechar modal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="certificado-modal__header">
+          <h2 id="certificado-modal-titulo" class="certificado-modal__titulo">Licenças e Certificados</h2>
+        </div>
+        <div class="certificado-modal__body">
+          <div class="certificados-lista" id="certificadosLista">
+            <!-- Certificados injectados via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="rodape" id="rodape" role="contentinfo">
@@ -426,6 +460,7 @@
   <script src="assets/js/skills-data.js" defer></script>
   <script src="assets/js/educations-data.js" defer></script>
   <script src="assets/js/projects-data.js" defer></script>
+  <script src="assets/js/certificados-data.js" defer></script>
   <script src="assets/js/app.js" defer></script>
 </body>
 

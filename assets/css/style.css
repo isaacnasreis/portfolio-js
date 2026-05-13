@@ -1571,6 +1571,267 @@ body .principal .outlined {
   margin-top: 0.5rem;
 }
 
+/* === BOTAO CERTIFICADOS === */
+.certificados__botao-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.certificados__botao {
+  background: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--text-light);
+  border-radius: 0.25rem;
+  padding: 0.85rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.certificados__botao:hover {
+  background: var(--text-light);
+  color: var(--text-dark);
+}
+
+.certificados__botao:hover svg {
+  stroke: var(--text-dark);
+}
+
+/* === MODAL DE CERTIFICADOS === */
+.certificado-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.certificado-modal[aria-hidden="false"] {
+  pointer-events: auto;
+}
+
+.certificado-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.certificado-modal[aria-hidden="false"] .certificado-modal__backdrop {
+  opacity: 1;
+}
+
+.certificado-modal__content {
+  position: relative;
+  background: var(--bg-dark);
+  border: 1px solid var(--text-muted-dark);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.certificado-modal[aria-hidden="false"] .certificado-modal__content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.certificado-modal__fechar {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.certificado-modal__fechar:hover {
+  background: var(--text-light);
+  color: var(--text-dark);
+}
+
+.certificado-modal__header {
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificado-modal__titulo {
+  color: var(--text-light);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.certificado-modal__body {
+  padding: 1.5rem 2rem 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Custom Scrollbar for Modal Body */
+.certificado-modal__body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.certificado-modal__body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.certificado-modal__body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.certificado-modal__body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.certificados-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.certificado-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.certificado-modal[aria-hidden="false"] .certificado-card {
+  animation: fadeInUpCard 0.5s ease forwards;
+}
+
+@keyframes fadeInUpCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.certificado-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.certificado-card__icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #333;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Backgrounds para icones especificos */
+.certificado-card__icon.hora-de-codar {
+  background-color: #212121;
+  /* Dark theme */
+  color: #f7df1e;
+  /* Yellow */
+}
+
+.certificado-card__icon.udemy {
+  background-color: #A435F0;
+  color: #fff;
+}
+
+.certificado-card__icon.alura {
+  background-color: #fff;
+  background-image: url("./../img/alura-logo.svg");
+}
+
+.certificado-card__icon.coursera {
+  background-color: #0056D2;
+  color: #fff;
+}
+
+.certificado-card__icon.senai {
+  background-color: #fff;
+  background-image: url("./../img/senai-logo.svg");
+}
+
+.certificado-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.certificado-card__titulo {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.certificado-card__empresa {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.certificado-card__cred {
+  color: var(--text-muted-light);
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+
+.certificado-card__skills {
+  color: var(--text-muted-light);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.certificado-card__skills strong {
+  color: var(--text-light);
+}
+
+
 @media screen and (max-width: 640px) {
   .projeto-modal__body {
     padding: 1rem;
