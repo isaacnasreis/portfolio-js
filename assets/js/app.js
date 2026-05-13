@@ -333,6 +333,13 @@ const figmaSVG = `
   </svg>
 `;
 
+const notionSVG = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+    <path d="M8 16V8l8 8V8"></path>
+  </svg>
+`;
+
 function createProjectElement(project) {
   const projectArticle = document.createElement('article');
   projectArticle.className = 'projeto animate-flip';
@@ -370,6 +377,12 @@ function createProjectElement(project) {
       linksHtml += `
         <a class="projeto__link figma-link" href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer">
           ${figmaSVG} Figma
+        </a>`;
+    }
+    if (project.notionUrl) {
+      linksHtml += `
+        <a class="projeto__link notion-link" href="${project.notionUrl}" target="_blank" rel="noopener noreferrer">
+          ${notionSVG} Notion
         </a>`;
     }
   }
@@ -483,6 +496,9 @@ function openModal(project) {
     `;
     if (project.figmaUrl) {
       linksHtml += `<a class="projeto__link figma-link" href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer">${figmaSVG} Figma</a>`;
+    }
+    if (project.notionUrl) {
+      linksHtml += `<a class="projeto__link notion-link" href="${project.notionUrl}" target="_blank" rel="noopener noreferrer">${notionSVG} Notion</a>`;
     }
   }
   modalLinks.innerHTML = linksHtml;
