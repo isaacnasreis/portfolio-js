@@ -13,11 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Isaac Reis | Principal Frontend Engineer & Product Designer",
-  description: "Polo Tech de Isaac Reis. Construindo aplicações escaláveis da arquitetura ao pixel. Full Stack, UX Engineering e Product Design.",
+  title: "Isaac Reis | Full Stack Developer & Product Designer",
+  description:
+    "Polo Tech de Isaac Reis. Construindo aplicações escaláveis da arquitetura ao pixel. Full Stack, UX Engineering e Product Design.",
   openGraph: {
-    title: "Isaac Reis | Principal Frontend Engineer & Product Designer",
-    description: "Polo Tech de Isaac Reis. Construindo aplicações escaláveis da arquitetura ao pixel.",
+    title: "Isaac Reis | Full Stack Developer & Product Designer",
+    description:
+      "Polo Tech de Isaac Reis. Construindo aplicações escaláveis da arquitetura ao pixel.",
     url: "https://tech.isaacreis.com",
     siteName: "Isaac Reis Tech Hub",
     locale: "pt_BR",
@@ -38,10 +40,8 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-background text-foreground scanlines">
         {/* We add a fixed pixel grid in the background to give that subtle retro-futuristic feel */}
         <div className="fixed inset-0 z-[-1] bg-grid-pattern pointer-events-none opacity-40"></div>
-        
-        <main className="flex-1 flex flex-col">
-          {children}
-        </main>
+
+        <main className="flex-1 flex flex-col">{children}</main>
       </body>
     </html>
   );

@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Polo Tech - Isaac Reis 🌐
 
-## Getting Started
+Bem-vindo ao repositório do meu **Polo Tech**. Este projeto não é apenas um portfólio tradicional, mas sim um hub digital desenhado para demonstrar meu pensamento como engenheiro de software e designer de produto.
 
-First, run the development server:
+## 🚀 O Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O foco principal desta aplicação é transmitir senioridade, criatividade técnica e capacidade de construir sistemas escaláveis — da arquitetura até o pixel final. A interface foi desenhada seguindo uma estética *Cyber-Noir* (Blade Runner Minimalista), com foco pesado em acessibilidade, performance e animações fluidas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Stack Tecnológica
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework Core:** [Next.js 16 (App Router)](https://nextjs.org/)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Motion Design:** [Framer Motion](https://www.framer.com/motion/)
+- **Ícones:** [Lucide React](https://lucide.dev/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Estrutura e Camadas de Pensamento
 
-## Learn More
+O código-fonte deste projeto reflete minha organização profissional, dividida em conceitos claros:
 
-To learn more about Next.js, take a look at the following resources:
+- `src/components/ui`: Componentes base (Botões, Inputs, etc.) construídos de forma modular.
+- `src/components/sections`: Blocos de conteúdo complexos (Hero, Cases de Engenharia, Processos).
+- `src/lib/utils.ts`: Utilitários de manipulação de classes (clsx + tailwind-merge).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏃 Como Rodar Localmente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone o repositório.
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Rode o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+4. Acesse `http://localhost:3000`.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Projetado e desenvolvido por Isaac Reis.*
