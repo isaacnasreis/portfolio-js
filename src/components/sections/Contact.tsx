@@ -56,7 +56,7 @@ export function Contact() {
             asChild
           >
             <a href="mailto:contato@isaacreis.com">
-              <Mail className="w-5 h-5" /> Enviar Email
+              <Mail className="w-5 h-5" /> contato@isaacreis.com
             </a>
           </Button>
           <Button
