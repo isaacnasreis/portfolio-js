@@ -25,6 +25,8 @@ const layers = [
       "Node.js",
       "PHP",
       "Java",
+      "Python",
+      "C#",
       "APIs REST/GraphQL",
       "SQL / NoSQL",
       "Arquitetura",

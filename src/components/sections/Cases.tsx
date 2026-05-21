@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Lock } from "lucide-react";
+import { ArrowUpRight, Server } from "lucide-react";
 import Image from "next/image";
 import { FaFigma, FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
@@ -9,9 +9,22 @@ import { Section } from "../layout/Section";
 
 const cases = [
   {
+    title: "Concurseiro AI",
+    description:
+      "Ecossistema completo de estudos impulsionado por Inteligência Artificial (Google Gemini). Gera simulados infinitos, simplifica PDFs jurídicos e cria planos de estudo mentorados. Arquitetura moderna, assíncrona e desacoplada, com extrema atenção à segurança (Rate Limiting) e uma UI Glassmorphism de alta conversão.",
+    tags: ["Vue 3", "FastAPI", "Python", "Google Gemini", "PostgreSQL"],
+    category: "AI Software Engineering",
+    link: "https://concurseiro-ai-frontend.vercel.app/",
+    repoUrl: "https://github.com/isaacnasreis/concurseiro-ai-frontend",
+    backendRepoUrl: "https://github.com/isaacnasreis/concurseiro-ai-backend",
+    image: "/projects/concurseiro-ai.webp",
+    className:
+      "md:col-span-2 md:row-span-2 bg-gradient-to-br from-card to-background",
+  },
+  {
     title: "StabArts E-commerce",
     description:
-      "Plataforma completa de e-commerce com SSR, painel administrativo protegido e state management reativo. Foco extremo em performance e micro-interações.",
+      "Plataforma completa de e-commerce com SSR, painel administrativo protegido e state management reativo.",
     tags: ["Nuxt 3", "Vue", "Pinia", "TypeScript"],
     category: "Full Stack Systems",
     link: "https://ecommercestabarts.vercel.app/",
@@ -21,7 +34,7 @@ const cases = [
     notionUrl:
       "https://www.notion.so/StabArts-E-commerce-35de39ea274c8042a87ad9944892ec1d?source=copy_link",
     image: "/projects/projeto-stabarts.webp",
-    className: "md:col-span-2 md:row-span-2",
+    className: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Santo Solar",
@@ -71,17 +84,6 @@ const cases = [
     image: "/projects/projeto-vortexAdmin.webp",
     className: "md:col-span-1 md:row-span-1",
   },
-  {
-    title: "[ Acesso Restrito / Lab ]",
-    description:
-      "Experimentações em desenvolvimento fechado. Trabalhando em engines WebGL e ferramentas locais de DX em Node.js.",
-    tags: ["Creative Tech", "DX Tools", "Classified"],
-    category: "R&D",
-    link: "#",
-    comingSoon: true,
-    className:
-      "md:col-span-1 md:row-span-1 border-dashed border-primary/20 bg-transparent opacity-60",
-  },
 ];
 
 export function Cases() {
@@ -107,43 +109,37 @@ export function Cases() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative overflow-hidden rounded-2xl border border-border/50 p-6 flex flex-col group ${!item.comingSoon ? "hover:border-primary/50" : ""} transition-colors ${item.className}`}
+              className={`relative overflow-hidden rounded-2xl border border-border/50 p-6 flex flex-col group hover:border-primary/50 transition-colors ${item.className}`}
             >
               {/* Background Image & Overlay */}
-              {!item.comingSoon && item.image && (
+              {item.image && (
                 <div className="absolute inset-0 z-0 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover opacity-50 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105"
+                    className="object-cover opacity-30 group-hover:opacity-40 transition-all duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
                 </div>
               )}
 
-              {/* Placeholder Background */}
-              {item.comingSoon && (
-                <div className="absolute inset-0 bg-gradient-to-br from-card to-background z-0" />
-              )}
-
-              {!item.comingSoon && !item.image && (
-                <div className="absolute inset-0 bg-gradient-to-br from-card to-background z-0" />
+              {/* Placeholder Background if no image */}
+              {!item.image && (
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background z-0" />
               )}
 
               {/* Card Hover Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
 
-              {!item.comingSoon && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 z-20"
-                >
-                  <span className="sr-only">Ver projeto {item.title}</span>
-                </a>
-              )}
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-20"
+              >
+                <span className="sr-only">Ver projeto {item.title}</span>
+              </a>
 
               <div className="relative z-30 flex items-center justify-between mb-4 pointer-events-none">
                 <span className="text-xs font-mono font-semibold text-primary tracking-wider uppercase drop-shadow-sm">
@@ -151,20 +147,32 @@ export function Cases() {
                 </span>
 
                 <div className="flex items-center gap-3">
+                  {/* Backend Repo Icon (if exists) */}
+                  {(item as any).backendRepoUrl && (
+                    <a
+                      href={(item as any).backendRepoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative z-30 pointer-events-auto text-muted-foreground hover:text-emerald-400 transition-colors"
+                      title="Repositório Backend (API)"
+                    >
+                      <Server className="w-4 h-4 drop-shadow-md" />
+                    </a>
+                  )}
                   {item.repoUrl && (
                     <a
                       href={item.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative z-30 pointer-events-auto text-muted-foreground hover:text-primary transition-colors"
-                      title="Repositório GitHub"
+                      title="Repositório GitHub (Frontend)"
                     >
                       <FaGithub className="w-4 h-4 drop-shadow-md" />
                     </a>
                   )}
-                  {item.figmaUrl && (
+                  {(item as any).figmaUrl && (
                     <a
-                      href={item.figmaUrl}
+                      href={(item as any).figmaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative z-30 pointer-events-auto text-muted-foreground hover:text-primary transition-colors"
@@ -173,9 +181,9 @@ export function Cases() {
                       <FaFigma className="w-4 h-4 drop-shadow-md" />
                     </a>
                   )}
-                  {item.notionUrl && (
+                  {(item as any).notionUrl && (
                     <a
-                      href={item.notionUrl}
+                      href={(item as any).notionUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative z-30 pointer-events-auto text-muted-foreground hover:text-primary transition-colors"
@@ -184,19 +192,15 @@ export function Cases() {
                       <SiNotion className="w-4 h-4 drop-shadow-md" />
                     </a>
                   )}
-                  {!item.comingSoon ? (
-                    <ArrowUpRight className="w-5 h-5 ml-1 text-muted-foreground group-hover:text-primary transition-colors drop-shadow-md" />
-                  ) : (
-                    <Lock className="w-4 h-4 ml-1 text-muted-foreground" />
-                  )}
+                  <ArrowUpRight className="w-5 h-5 ml-1 text-muted-foreground group-hover:text-primary transition-colors drop-shadow-md" />
                 </div>
               </div>
 
               <div className="relative z-30 flex-1 flex flex-col justify-end pointer-events-none mt-auto">
-                <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground drop-shadow-md">
+                <h3 className="text-xl md:text-3xl font-bold mb-3 text-foreground drop-shadow-md tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground/90 line-clamp-3 mb-4 drop-shadow-sm">
+                <p className="text-sm md:text-base text-muted-foreground/90 line-clamp-4 mb-5 drop-shadow-sm">
                   {item.description}
                 </p>
 
